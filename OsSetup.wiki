@@ -3,6 +3,7 @@
 = Введение =
 
 Описание для Debian/Ubuntu, в частности используется версия Ubuntu 10.04 LTS 32-bit
+http://releases.ubuntu.com/lucid/
 
 = Описание =
 
