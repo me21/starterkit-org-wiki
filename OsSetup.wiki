@@ -10,20 +10,20 @@ http://releases.ubuntu.com/lucid/
 После установки системы доустановите необходимые пакеты
 
 {{{
- sudo apt-get install -y build-essential gcc g++ autoconf automake libtool bison flex gettext 
- sudo apt-get install -y patch subversion texinfo wget git-core
- sudo apt-get install -y libncurses5 libncurses5-dev
- sudo apt-get install -y zlib1g-dev liblzo2-2 liblzo2-dev
- sudo apt-get install -y libacl1 libacl1-dev gawk cvs curl lzma 
- sudo apt-get install -y uuid-dev mercurial
+sudo apt-get install -y build-essential gcc g++ autoconf automake libtool bison flex gettext 
+sudo apt-get install -y patch subversion texinfo wget git-core
+sudo apt-get install -y libncurses5 libncurses5-dev
+sudo apt-get install -y zlib1g-dev liblzo2-2 liblzo2-dev
+sudo apt-get install -y libacl1 libacl1-dev gawk cvs curl lzma 
+sudo apt-get install -y uuid-dev mercurial
 }}}
 
 Для работы Buildroot желательно установить
 
 {{{
- sudo apt-get install libglib2.0-dev
- sudo apt-get install libnetpbm10-dev
- sudo apt-get install python-xcbgen
+sudo apt-get install libglib2.0-dev
+sudo apt-get install libnetpbm10-dev
+sudo apt-get install python-xcbgen
 }}}
 
 Проверьте что /bin/sh не ссылается на /bin/dash - это чревато проблемами при сбоорке, выберите <No> в конфигураторе dash
