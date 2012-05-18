@@ -27,3 +27,4 @@ mkdir ~/work/ctng-build
 cd ~/work/ctng-build
 ct-ng menuconfig
 }}}
+http://wiki.starterkit-org.googlecode.com/git-history/master/images/work-ctng-build.png
