@@ -18,7 +18,7 @@ http://releases.ubuntu.com/lucid/
  sudo apt-get install -y uuid-dev mercurial
 }}}
 
-Для работы Buildroot желательно установить еще
+Для работы Buildroot желательно установить
 
 {{{
  sudo apt-get install libglib2.0-dev
