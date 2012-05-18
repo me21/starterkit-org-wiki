@@ -21,7 +21,7 @@ cd crosstool-ng-1.15.2
 make 
 sudo make install
 }}}
-приступаем к конфигурированию кросскомпилыятора
+приступаем к конфигурированию кросскомпилятора
 {{{
 mkdir ~/work/ctng-build
 cd ~/work/ctng-build
