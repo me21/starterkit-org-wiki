@@ -35,7 +35,7 @@ Paths and misc options  --->
   [*] Try features marked as EXPERIMENTAL
   (${HOME}/ctng-atmel) Prefix directory
 }}}
-открывает доступ в конфигураторе для выбора "экспериментальных" версий binutils, glibc, gcc и пр (к слову я например только из-за них и использую самосборный кросскомпилятор :) Prefix directory - куда будет установлен будущий КК, ${HOME} - означает домашняя директория пользователя от чьего имени собирается КК.
+открывает доступ в конфигураторе для выбора "экспериментальных" версий binutils, glibc, gcc и пр (например gcc и gdb linaro) Prefix directory - куда будет установлен будущий КК, ${HOME} - означает домашняя директория пользователя от чьего имени собирается КК.
 {{{
 Target options  ---> 
   Target Architecture (arm)
