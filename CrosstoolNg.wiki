@@ -65,7 +65,7 @@ Binary utilities  --->
   binutils version (2.22 (EXPERIMENTAL))
   Linkers to enable (ld)
 }}}
-на данный момент последний стабильный релиз, выбираю ld - потому что gold никогда не пробовал :)
+на данный момент последний стабильный релиз.
 {{{
 C compiler  --->
   [*] Show Linaro versions (EXPERIMENTAL)
@@ -73,7 +73,7 @@ C compiler  --->
   [*] C++
   [*] Optimize gcc libs for size 
 }}}
-выбирайте версию gcc на свое усмотрение linaro - лично мое предпочтение.
+выбирайте версию gcc исходя из своих поотребностей, linaro - лично мое предпочтение.
 {{{
 C-library  --->
   C library (eglibc)
