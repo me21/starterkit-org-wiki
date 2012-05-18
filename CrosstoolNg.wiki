@@ -1,0 +1,27 @@
+#summary One-sentence summary of this page.
+
+= Введение =
+
+Несколько слов про сборку кросскомпилятора, если вам по какой-то причине не подходят готовые, например 
+http://sourcery.mentor.com/public/gnu_toolchain
+
+= Описание =
+
+Чтобы облегчить себе жизнь - воспользуемся средством автоматизации сборки 
+http://crosstool-ng.org
+
+Далее описание для версии 1.15.2 - это последняя на данный момент. 
+
+Устанавливаем скрипты сборк
+{{{
+ mkdir ~/work
+ cd ~/work
+ wget http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.15.2.tar.bz2
+ tar xjvf crosstool-ng-1.15.2.tar.bz2
+ cd crosstool-ng-1.15.2
+ ./configure
+ make 
+ sudo make install
+}}}
+
+приступаем к конфигурированию кросскомпилыятора
