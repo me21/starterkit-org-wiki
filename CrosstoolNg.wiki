@@ -12,13 +12,18 @@ http://crosstool-ng.org
 Далее описание для версии 1.15.2 - это последняя на данный момент. 
 Устанавливаем скрипты сборки
 {{{
- mkdir ~/work
- cd ~/work
- wget http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.15.2.tar.bz2
- tar xjvf crosstool-ng-1.15.2.tar.bz2
- cd crosstool-ng-1.15.2
- ./configure
- make 
- sudo make install
+mkdir ~/work
+cd ~/work
+wget http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.15.2.tar.bz2
+tar xjvf crosstool-ng-1.15.2.tar.bz2
+cd crosstool-ng-1.15.2
+./configure
+make 
+sudo make install
 }}}
 приступаем к конфигурированию кросскомпилыятора
+{{{
+mkdir ~/work/ctng-build
+cd ~/work/ctng-build
+ct-ng menuconfig
+}}}
