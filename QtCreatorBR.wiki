@@ -15,3 +15,12 @@ wget http://get.qt.nokia.com/qtcreator/qt-creator-linux-x86-opensource-2.5.0.bin
 chmod +x qt-creator-linux-x86-opensource-2.5.0.bin
 ./qt-creator-linux-x86-opensource-2.5.0.bin
 }}}
+установщик предельно прост - жмем Next и соглашаемся с лицензионным соглашением. После запуска Qt Creator 
+{{{
+выбрать в меню вверху Tools -> Options...
+слева выбрать Build & Run
+в появившемся окне перейти на вкладку Qt Version
+справа выбрать Add...
+в появившемся окне указать путь к qmake /home/sasa/buildroot-2012.02/output/host/usr/bin/qmake
+}}}
+в данном случае собранное дерево buildroot находится в моей домашней директории /home/sasa, укажите путь аналогично для своей системы.
