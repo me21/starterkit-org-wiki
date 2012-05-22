@@ -19,9 +19,19 @@ chmod +x qt-creator-linux-x86-opensource-2.5.0.bin
 {{{
 выбрать в меню вверху Tools -> Options...
 слева выбрать Build & Run
-в появившемся окне перейти на вкладку Qt Version
+в появившемся окне перейти на вкладку "Qt Version"
 справа выбрать Add...
-в появившемся окне указать путь к qmake /home/sasa/buildroot-2012.02/output/host/usr/bin/qmake
+в появившемся окне выберите путь к qmake:
+"/home/sasa/buildroot-2012.02/output/host/usr/bin/qmake"
 }}}
-в данном случае собранное дерево buildroot находится в моей домашней директории /home/sasa, укажите путь аналогично для своей системы.
+в данном случае собранное дерево buildroot находится в моей домашней директории /home/sasa, укажите путь аналогично для своей системы, Atmel в версии Qt я добавил для удобства.
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options.png
+далее нужно указать кросскомпилятор 
+{{{
+перейти на вкладку Tool Chains
+нажать справа Add...
+в выпадающем меню выбрать GCC
+в поле Name можно указать свое описание, например "Atmel armv5"
+в поле Compiler Path выберите путь через Browse... справа "/home/sasa/buildroot-2012.02/output/host/usr/bin/arm-atmel-linux-gnueabi-gcc"
+в поле Debugger в Browse... справа выберите "/home/sasa/buildroot-2012.02/output/host/usr/bin/arm-atmel-linux-gnueabi-gdb"
+в поле ABI в выпадающем меню выбрать "arm-lunux-generic-elf-32bit"
