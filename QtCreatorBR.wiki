@@ -36,5 +36,5 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-1.png
 в поле Debugger в Browse... справа выберите "/home/sasa/buildroot-2012.02/output/host/usr/bin/arm-atmel-linux-gnueabi-gdb"
 в поле ABI в выпадающем меню выбрать "arm-lunux-generic-elf-32bit"
 }}}
-Для примера - скрин того что описано
+Для примера - скрин того что описано:
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-2.png
