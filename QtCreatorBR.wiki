@@ -24,3 +24,4 @@ chmod +x qt-creator-linux-x86-opensource-2.5.0.bin
 в появившемся окне указать путь к qmake /home/sasa/buildroot-2012.02/output/host/usr/bin/qmake
 }}}
 в данном случае собранное дерево buildroot находится в моей домашней директории /home/sasa, укажите путь аналогично для своей системы.
+http://wiki.starterkit-org.googlecode.com/git/images/
