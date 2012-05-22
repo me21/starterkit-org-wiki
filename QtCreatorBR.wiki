@@ -5,7 +5,7 @@
 Описание на примере buildroot 2012.02 http://www.buildroot.net/downloads/buildroot-2012.02.tar.bz2 и Qt Creator 2.5.0 http://get.qt.nokia.com/qtcreator/qt-creator-linux-x86-opensource-2.5.0.bin
 
 
-== Описание ==
+== Базовая настройка ==
 
 Скачиваем бинарный инсталлятор для Linux и устанавливаем
 
@@ -31,10 +31,18 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-1.png
 перейти на вкладку Tool Chains
 нажать справа Add...
 в выпадающем меню выбрать GCC
-в поле Name можно указать свое описание, например "Atmel armv5"
-в поле Compiler Path выберите путь через Browse... справа "/home/sasa/buildroot-2012.02/output/host/usr/bin/arm-atmel-linux-gnueabi-gcc"
-в поле Debugger в Browse... справа выберите "/home/sasa/buildroot-2012.02/output/host/usr/bin/arm-atmel-linux-gnueabi-gdb"
+Name - можно указать свое описание, например "Atmel armv5"
+Compiler Path выберите путь через Browse... справа "/home/sasa/buildroot-2012.02/output/host/usr/bin/arm-atmel-linux-gnueabi-gcc"
+Debugger в Browse... справа выберите "/home/sasa/buildroot-2012.02/output/host/usr/bin/arm-atmel-linux-gnueabi-gdb"
 в поле ABI в выпадающем меню выбрать "arm-lunux-generic-elf-32bit"
 }}}
 Для примера - скрин того что описано:
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-2.png
+== Настройка подключения к плате == 
+{{{
+перейти в меню Tools -> Options...
+слева выбрать Linux Devices
+нажать справа Add... 
+в появившемся окне выбрать Generic Linux device и нажать Start Wizard
+укажите название конфигурации, например sk-sam9g45-oem
+}}}
