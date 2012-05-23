@@ -25,7 +25,9 @@ chmod +x qt-creator-linux-x86-opensource-2.5.0.bin
 "/home/sasa/buildroot-2012.02/output/host/usr/bin/qmake"
 }}}
 в данном случае собранное дерево buildroot находится в моей домашней директории /home/sasa, укажите путь аналогично для своей системы, Atmel в версии Qt я добавил для удобства, вот что должно получиться:
+
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-1.png
+
 далее нужно указать кросскомпилятор 
 {{{
 перейти на вкладку Tool Chains
@@ -37,8 +39,11 @@ Debugger в Browse... справа выберите "/home/sasa/buildroot-2012.0
 в поле ABI в выпадающем меню выбрать "arm-lunux-generic-elf-32bit"
 }}}
 Для примера - скрин того что описано:
+
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-2.png
+
 == Настройка подключения к плате == 
+
 {{{
 перейти в меню Tools -> Options...
 слева выбрать Linux Devices
@@ -46,14 +51,15 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-2.png
 в появившемся окне выбрать Generic Linux device и нажать Start Wizard
 укажите название конфигурации, например sk-sam9g45-oem
 }}}
+
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-New-Generic-Linux-Device-Configuration-Setup.png
 
-после заполнения конфигурации жмем Next, начнется тестирование удаленного устройства (плата должна быть включена), если все прошло успешно, появится окно
+после заполнения конфигурации жмем Next, начнется тестирование удаленного устройства (плата должна быть включена), если все прошло успешно, появится окно:
 
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Device-Test.png
 
-по окончании должно получиться что-то подобное
+по окончании должно получиться что-то подобное:
 
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-3.png
 
-если плата не была включена и тестирование прошло неудачно - ничего страшного в этом нет, сохраняйте конфигурацию
+если плата не была включена и тестирование прошло неудачно - ничего страшного в этом нет, сохраняйте конфигурацию.
