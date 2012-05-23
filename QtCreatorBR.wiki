@@ -47,8 +47,13 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-2.png
 укажите название конфигурации, например sk-sam9g45-oem
 }}}
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-New-Generic-Linux-Device-Configuration-Setup.png
+
 после заполнения конфигурации жмем Next, начнется тестирование удаленного устройства (плата должна быть включена), если все прошло успешно, появится окно
+
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Device-Test.png
+
 по окончании должно получиться что-то подобное
+
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-3.png
+
 если плата не была включена и тестирование прошло неудачно - ничего страшного в этом нет, сохраняйте конфигурацию
