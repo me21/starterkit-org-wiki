@@ -4,7 +4,6 @@
 
 Описание на примере buildroot 2012.02 http://www.buildroot.net/downloads/buildroot-2012.02.tar.bz2 и Qt Creator 2.5.0 http://get.qt.nokia.com/qtcreator/qt-creator-linux-x86-opensource-2.5.0.bin
 
-
 == Базовая настройка ==
 
 Скачиваем бинарный инсталлятор для Linux и устанавливаем
@@ -92,13 +91,13 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-browser-Qt-Creat
 
 {{{
 Переходим на вкладку Projects -> Run Settings
-Убираем в Upload files via SFTP галку с incremental deployment
+Убираем в Upload files via SFTP галку с incremental deployment срава в Details
 Добавляем в поле Arguments:    -qws
 }}}
 
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-browser-Qt-Creator-2.png
 
-Проект готов к сборке и запуску на плате, наживаем зеленый треугольник Run на панели слева, на плате через некоторое время после сборки должен появиться браузер Qt Demo Browser. Внизу на вкладке 3 Application Output должно быть так
+Проект готов к сборке и запуску на плате, нажимаем зеленый треугольник Run на панели слева, на плате через некоторое время после сборки должен появиться браузер Qt Demo Browser. Внизу на вкладке 3 Application Output должно быть так
 
 {{{
 Killing remote process(es)...
@@ -118,8 +117,8 @@ Terminated
 {{{
 В меню слева выбираем Debug
 переходим в редакторе к файлу main.cpp
-устанавливаем точку останова - правая кнопка мыши в нужной точке - Set breakpoint at line 50 в появившемся меню
-Start Debugging
+устанавливаем точку останова - правая кнопка мыши в нужной точке -> Set breakpoint at line 50 в появившемся меню
+жмем Start Debugging
 }}}
 
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-main.cpp-browser-Qt-Creator.png
