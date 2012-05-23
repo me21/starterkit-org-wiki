@@ -64,10 +64,53 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-3.png
 
 если плата не была включена и тестирование прошло неудачно - ничего страшного в этом нет, сохраняйте конфигурацию.
 
-== Установка активного проекта ==
+== Выбор проекта ==
 
 В качестве примера будет использован демо-проект из состава Qt 
 {{{
-Ооткрываем меню File -> Open File or Project...
-выбираем проект buildroot-2012.02/output/build/qt-4.7.4/demos/embedded/fluidlauncher/fluidlaucher.pro
+Открываем меню File -> Open File or Project...
+выбираем проект buildroot-2012.02/output/build/qt-4.7.4/demos/browser/browser.pro
 }}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-browser-Qt-Creator.png
+
+{{{
+жмем Configure Project
+}}}
+
+== Настройка проекта ==
+
+{{{
+На панели слева выбираем browser -> Debug
+Переходим на вкладку Projects -> Build Settings
+должно быть что-то подобное
+}}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-browser-Qt-Creator-1.png
+
+Если все нормально - ничего тут менять не нужно
+
+{{{
+Переходим на вкладку Projects -> Run Settings
+Убираем в Upload files via SFTP галку с incremental deployment
+Добавляем в поле Arguments:    -qws
+}}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-browser-Qt-Creator-2.png
+
+Проект готов к сборке и запуску на плате, наживаем зеленый треугольник Run на панели слева, на плате через некоторое время после сборки должен появиться браузер Qt Demo Browser. Внизу на вкладке 3 Application Output должно быть так
+
+{{{
+Killing remote process(es)...
+Starting remote process...
+Remote process started.
+}}}
+
+Звершить программу можно на плате - мышью нажать X в правом верхнем углу окна приложения, либо удаленно - нажав красный квадрат в окне 3 Application Output:
+
+{{{
+Killing remote process(es)...
+Terminated
+}}}
+
+== Удаленная отладка приложения ==
