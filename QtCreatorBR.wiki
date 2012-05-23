@@ -63,3 +63,11 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Device-Test.png
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-3.png
 
 если плата не была включена и тестирование прошло неудачно - ничего страшного в этом нет, сохраняйте конфигурацию.
+
+== Установка активного проекта ==
+
+В качестве примера будет использован демо-проект из состава Qt 
+{{{
+Ооткрываем меню File -> Open File or Project...
+выбираем проект buildroot-2012.02/output/build/qt-4.7.4/demos/embedded/fluidlauncher/fluidlaucher.pro
+}}}
