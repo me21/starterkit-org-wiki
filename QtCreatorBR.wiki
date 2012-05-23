@@ -50,5 +50,5 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-New-Generic-Linu
 после заполнения конфигурации жмем Next, начнется тестирование удаленного устройства (плата должна быть включена), если все прошло успешно, появится окно
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Device-Test.png
 по окончании должно получиться что-то подобное
-http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options.png
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Options-3.png
 если плата не была включена и тестирование прошло неудачно - ничего страшного в этом нет, сохраняйте конфигурацию
