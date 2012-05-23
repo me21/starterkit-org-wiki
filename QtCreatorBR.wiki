@@ -119,4 +119,11 @@ Terminated
 В меню слева выбираем Debug
 переходим в редакторе к файлу main.cpp
 устанавливаем точку останова - правая кнопка мыши в нужной точке - Set breakpoint at line 50 в появившемся меню
+Start Debugging
 }}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-main.cpp-browser-Qt-Creator.png
+
+Проект загрузится на плату, запустится и остановится в выбранной точке
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-main.cpp-browser-Qt-Creator-1.png
