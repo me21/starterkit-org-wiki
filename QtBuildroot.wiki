@@ -32,7 +32,7 @@ sed -i 's/root::10933:/root:jtmgqWDG61z0.:13514:/' fs/skeleton/etc/shadow
 }}}
 копируем gdb-server который мы собрали в crosstool-ng
 {{{
-cp -r ~/ctng-atmel/arm-atmel-linux-gnueabi/debug-root/* fs/skeleton
+cp -r ~/ctng-atmel/arm-atmel-linux-gnueabi/debug-root/usr/bin/gdbserver fs/skeleton/usr/bin/
 }}}
 копируем настройки локального времени для Москвы
 {{{
@@ -195,7 +195,7 @@ Kernel ->
   Kernel binary format (uImage)
 }}}
 
-http://starterkit-org.googlecode.com/files/linux-3.2.18-oem.patch - патч для платы Startterkit SK-9G45-OEM, at91sam9g45sd7 - конфиг для корневой на SD и 7" TFT панели, для 4" панели наберите в этом поле at91sam9g45sd7. 
+http://starterkit-org.googlecode.com/files/linux-3.2.18-oem.patch - патч для платы Startterkit SK-9G45-OEM, at91sam9g45sd7 - конфиг для корневой на SD и 7" TFT панели, для 4" панели наберите в этом поле at91sam9g45sd4. 
 Конфигурация закончена, выбиаем Exit в главном окне, на вопрос 
 Do you wish to save your new configuration? отвечаем < Yes >
 
@@ -204,4 +204,4 @@ Do you wish to save your new configuration? отвечаем < Yes >
 make
 }}}
 
-Qt будет собираться достаточно долго - у меня больше 3 часов (если вам что-то не нужно из модулей - вы можете их не включать в конфиг, особенно долго собирается QtWebkit)
+Qt будет собираться достаточно долго - у меня больше 3 часов (если вам что-то не нужно из модулей - вы можете их не включать в конфиг, особенно долго собирается QtWebkit). По окончании сборки имиджи ядра и корневой ФС находятся в директории output/images/.
