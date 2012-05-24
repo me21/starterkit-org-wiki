@@ -80,7 +80,7 @@ Build options -> оставляем все по умолчанию
 Build options -> strip -> none
 }}}
 
-http://wiki.starterkit-org.googlecode.com/git/images/Screenshot
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-buildroot-2012.02-1.png
 
 указываем свой кросскомпилятор
 {{{
@@ -96,7 +96,7 @@ Toolchain  ->
   (-pipe -march=armv5te -mtune=arm926ej-s) Target Optimizations
 }}}
 
-http://wiki.starterkit-org.googlecode.com/git/images/Screenshot
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-buildroot-2012.02-2.png
 
 настройки системы
 {{{
@@ -104,7 +104,7 @@ System configuration ->
   /dev management (Dynamic using udev)
 }}}
 
-http://wiki.starterkit-org.googlecode.com/git/images/Screenshot
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-buildroot-2012.02-3.png
 
 Выбор пакетов для корневой ФС 
 {{{
