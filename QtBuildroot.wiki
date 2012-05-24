@@ -108,11 +108,12 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot
 
 Выбор пакетов для корневой ФС 
 {{{
-Audio and video libraries and applications ->
-  -*- alsa-lib
-  [*] gstreamer
-  [*]   enable gst-debug trace support
-  -*- gst-plugins-base
+Package Selection for the target ->
+  Audio and video libraries and applications ->
+    -*- alsa-lib
+    [*] gstreamer
+    [*]   enable gst-debug trace support
+    -*- gst-plugins-base
 }}}   
 для примера в Qt выбран практически полный набор
 {{{
@@ -163,3 +164,35 @@ Package Selection for the target ->
       [*]     Script Tools Module
       [*]     Declarative module   
 }}}
+
+Для удаленной отладки потребуется ssh сервер, возможно использовать минималистичный dropbear, я выбираю openssh потому что тестировал с ним
+{{{
+Package Selection for the target ->
+  Networking applications ->
+    [*] openssh
+}}}
+
+В качестве имиджа корневой ФС создаем простой архив tar.gz
+{{{
+Filesystem images ->
+  [*] tar the root filesystem
+    Compression method (gzip)
+}}}
+Оставляем в Host utilities все по умолчанию - ничего не выбираем.
+Загрузчик не собираем - воспользуемся отдельным не из состава buildroot, так что Bootloaders так же пропускаем.
+Правила для ядра
+{{{
+Kernel -> 
+  [*] Linux Kernel
+  Kernel version (Custom version)
+  (3.2.18) Kernel version
+  Custom kernel patches -> 
+    скопируйте и вставьте эти две ссылки через пробел
+    http://www.kernel.org/pub/linux/kernel/projects/rt/3.2/patch-3.2.18-rt29.patch.bz2
+    http://starterkit-org.googlecode.com/files/linux-3.2.18-oem.patch
+  Kernel configuration (Using a defconfig)
+  (at91sam9g45sd7) Defconfig name
+  Kernel binary format (uImage)
+}}}
+
+http://starterkit-org.googlecode.com/files/linux-3.2.18-oem.patch - патч для платы Startterkit SK-9G45-OEM, at91sam9g45sd7 - конфиг для корневой на SD и 7" TFT панели, для 4" панели наберите в этом поле at91sam9g45sd7. 
