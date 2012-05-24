@@ -165,7 +165,7 @@ Package Selection for the target ->
       [*]     Declarative module   
 }}}
 
-Для удаленной отладки потребуется ssh сервер, возможно использовать минималистичный dropbear, я выбираю openssh потому что тестировал с ним
+Для автоматизации загрузки проектов на плату и удаленной отладки потребуется ssh сервер, возможно использовать минималистичный dropbear, я выбираю openssh потому что тестировал с ним
 {{{
 Package Selection for the target ->
   Networking applications ->
