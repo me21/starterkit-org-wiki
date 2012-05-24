@@ -80,7 +80,86 @@ Build options -> оставляем все по умолчанию
 Build options -> strip -> none
 }}}
 
-
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot
 
 указываем свой кросскомпилятор
 {{{
+Toolchain  ->
+  Toolchain type (External toolchain)
+  Toolchain (Custom toolchain)
+  (/home/sasa/ctng-atmel) Toolchain path
+  (arm-atmel-linux-gnueabi) Toolchain prefix
+  External toolchain C library (glibc) 
+  [*] Toolchain has C++ support?
+  [*] Enable MMU support
+  [*] Use software floating point by default
+  (-pipe -march=armv5te -mtune=arm926ej-s) Target Optimizations
+}}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot
+
+настройки системы
+{{{
+System configuration ->
+  /dev management (Dynamic using udev)
+}}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot
+
+Выбор пакетов для корневой ФС 
+{{{
+Audio and video libraries and applications ->
+  -*- alsa-lib
+  [*] gstreamer
+  [*]   enable gst-debug trace support
+  -*- gst-plugins-base
+}}}   
+для примера в Qt выбран практически полный набор
+{{{
+Package Selection for the target ->
+  Graphic libraries and applications (graphic/text) ->
+    [*] Qt ->
+      [*]   Approve free license
+      [*]   Gui Module
+        Pixel depths ->
+          [*] 8 bpp, paletted
+          [*] 16 bpp, rgb 5-6-5
+          [*] 32 bpp, argb 8-8-8-8 and rgb 8-8-8
+        Fonts ->
+          [*] micro
+          [*] fixed
+          [*] helvetica
+        freetype2 support (Qt freetype2)
+      [*]     Enable GIF support
+      [*]     Enable libmng support
+      JPEG support (Use Qt bundled libjpeg)
+      PNG support (Use Qt bundled libpng)
+      TIFF support (Use Qt bundled libtiff)
+      [*]   SQL Module ->
+        SQLite 3 support (Qt SQLite)
+      Graphics drivers ->
+        [*] Linux Framebuffer
+      Mouse drivers -> 
+        [*] pc
+        [*] linux input
+        [*] tslib
+      Keyboard drivers ->
+        [*] tty 
+        [*] linux input
+      [*]   Phonon Module
+      [*]   Phonon Module Backend
+      [*]   DBus Module
+      [*]   XML Module
+      [*]     XML Patterns Module
+      [*]   Multimedia Module
+      [*]     QtMultimedia Audio backend
+      [*]   SVG Module
+      -*-   Network Module
+      [*]     WebKit Module
+      [*]   JavaScriptCore JIT compiler
+      [*]   STL support
+      [*]   Enable OpenSSL support
+      [*]   Script Module 
+      [*]     Script Tools Module
+      [*]     Declarative module   
+}}}
