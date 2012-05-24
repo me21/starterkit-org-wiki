@@ -12,3 +12,75 @@ wget http://www.buildroot.net/downloads/buildroot-2012.02.tar.bz2
 tar xjvf buildroot-2012.02.tar.bz2
 cd buildroot-2012.02
 }}}
+
+дальнейшая настройка подразумевает что мы находимся в корне директории buildroot-2012.02
+
+== Конфигурация корневой файловой системы ==
+
+Есть несколько способов внести изменения в ФС под свои нужды
+
+http://www.buildroot.net/downloads/buildroot.html#custom_targetfs
+
+воспользуемся "стандартным" скелетом и будем вносить свои изменения.
+Сохраняем копию скелета
+{{{
+cp -r fs/skeleton fs/skeleton_def
+}}}
+создаем пароль суперпользователя root 123456
+{{{
+sed -i 's/root::10933:/root:jtmgqWDG61z0.:13514:/' fs/skeleton/etc/shadow
+}}}
+копируем gdb-server который мы собрали в crosstool-ng
+{{{
+cp -r ~/ctng-atmel/arm-atmel-linux-gnueabi/debug-root/* fs/skeleton
+}}}
+копируем настройки локального времени для Москвы
+{{{
+cp /home/sasa/ctng-atmel/arm-atmel-linux-gnueabi/sysroot/usr/share/zoneinfo/Europe/Moscow fs/skeleton/etc/localtime
+}}}
+прописываем настройки сетевого интерфейса
+{{{
+printf "\nauto eth0\niface eth0 inet static\naddress 192.168.0.136\nnetmask 255.255.255.0\ngateway 192.168.0.2\n" >> fs/skeleton/etc/network/interfaces
+}}} 
+прописываем DNS сервер google
+{{{
+rm fs/skeleton/etc/resolv.conf
+echo "nameserver 8.8.8.8" > fs/skeleton/etc/resolv.conf
+}}}
+указваем в каком порядке резольвить адреса (сначала искать в локальных файлах, затем на сервере DNS)
+{{{
+echo "hosts:    files dns" > fs/skeleton/etc/nsswitch.conf
+}}}
+вносим настройки tslib и мышки 
+{{{
+printf "\nexport QWS_MOUSE_PROTO=\"Tslib:/dev/input/event0 Auto\"\nexport TSLIB_TSDEVICE=\"/dev/input/event0\"\nexport TSLIB_TSCALIBFILE=\"/etc/pointercal\"\n" >> fs/skeleton/etc/profile
+}}}
+корректируем конфиг по умолчанию для busybox - для удаленной отладки в Qt Creator нам потребуется pgrep и pkill
+{{{
+sed -i 's/# CONFIG_PGREP is not set/CONFIG_PGREP=y/' package/busybox/busybox-1.19.x.config
+sed -i 's/# CONFIG_PKILL is not set/CONFIG_PKILL=y/' package/busybox/busybox-1.19.x.config
+}}}
+переходим к конфигурированию buidroot
+
+== Конфигурация buildroot ==
+
+Запускаем конфигуратор
+{{{
+make menuconfig
+}}}
+базовые настройки
+{{{
+Target Architecture -> arm
+Target Architecture Variant -> arm926t
+Target ABI -> EABI
+Build options -> оставляем все по умолчанию
+}}}
+*Примечание:* _если вам нужна отладочная информация в системных библиотеках (например в библиотеках Qt) отключите strip_
+{{{
+Build options -> strip -> none
+}}}
+
+
+
+указываем свой кросскомпилятор
+{{{
