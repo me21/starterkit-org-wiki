@@ -2,7 +2,7 @@
 
 == Введение ==
 
-Описание на примере buildroot 2012.02 http://www.buildroot.net/downloads/buildroot-2012.02.tar.bz2 и Qt Creator 2.5.0 http://get.qt.nokia.com/qtcreator/qt-creator-linux-x86-opensource-2.5.0.bin
+Описание на примере buildroot 2012.02 и Qt Creator 2.5.0 http://get.qt.nokia.com/qtcreator/qt-creator-linux-x86-opensource-2.5.0.bin. Предполагается что выполнены предварительные шаги, описанные в QtBR. 
 
 == Базовая настройка ==
 
