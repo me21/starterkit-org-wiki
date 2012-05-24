@@ -8,6 +8,7 @@
 
 {{{
 cd ~
-wget 
-скачиваем
+wget http://www.buildroot.net/downloads/buildroot-2012.02.tar.bz2
+tar xjvf buildroot-2012.02.tar.bz2
+cd buildroot-2012.02
 }}}
