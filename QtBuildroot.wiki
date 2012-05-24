@@ -1,0 +1,14 @@
+#summary Сборка Qt в Buildroot
+
+== Введение ==
+
+Описание процесса сборки корневой файловой системы c Qt на примере buildroot-2012.02. Предполагается что выполнены предварительные шаги, описанные в OsSetup и CrosstoolNg.
+
+== Установка buildroot ==
+
+{{{
+cd ~
+wget http://www.buildroot.net/downloads/buildroot-2012.02.tar.bz2
+tar xjvf buildroot-2012.02.tar.bz2
+cd buildroot-2012.02
+}}}
