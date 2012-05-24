@@ -196,3 +196,12 @@ Kernel ->
 }}}
 
 http://starterkit-org.googlecode.com/files/linux-3.2.18-oem.patch - патч для платы Startterkit SK-9G45-OEM, at91sam9g45sd7 - конфиг для корневой на SD и 7" TFT панели, для 4" панели наберите в этом поле at91sam9g45sd7. 
+Конфигурация закончена, выбиаем Exit в главном окне, на вопрос 
+Do you wish to save your new configuration? отвечаем < Yes >
+
+Сборка
+{{{
+make
+}}}
+
+Qt будет собираться достаточно долго - у меня больше 3 часов (если вам что-то не нужно из модулей - вы можете их не включать в конфиг, особенно долго собирается QtWebkit)
