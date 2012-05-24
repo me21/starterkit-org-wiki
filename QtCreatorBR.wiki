@@ -97,7 +97,11 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-browser-Qt-Creat
 
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-browser-Qt-Creator-2.png
 
-Проект готов к сборке и запуску на плате, нажимаем зеленый треугольник Run на панели слева, на плате через некоторое время после сборки должен появиться браузер Qt Demo Browser. Внизу на вкладке 3 Application Output должно быть так
+Проект готов к сборке и запуску на плате, нажимаем зеленый треугольник Run на панели слева, на плате через некоторое время после сборки должен появиться браузер Qt Demo Browser: 
+
+http://wiki.starterkit-org.googlecode.com/git/images/qtbrowser.png
+
+Внизу на вкладке 3 Application Output должно быть так
 
 {{{
 Killing remote process(es)...
