@@ -32,7 +32,7 @@ sed -i 's/root::10933:/root:jtmgqWDG61z0.:13514:/' fs/skeleton/etc/shadow
 }}}
 копируем gdb-server который мы собрали в crosstool-ng
 {{{
-cp -r ~/ctng-atmel/arm-atmel-linux-gnueabi/debug-root/usr/bin/gdbserver fs/skeleton/usr/bin/
+cp ~/ctng-atmel/arm-atmel-linux-gnueabi/debug-root/usr/bin/gdbserver fs/skeleton/usr/bin/
 }}}
 копируем настройки локального времени для Москвы
 {{{
