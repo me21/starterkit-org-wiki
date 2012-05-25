@@ -16,7 +16,7 @@ VirtualBox 4.1.16 for Windows hosts  x86/amd64
 }}}
 
 скачиваем установочный образ mini-iso по ссылке
-http://archive.ubuntu.com/ubuntu/dists/lucid/main/installer-i386/current/images/netboot/
+http://archive.ubuntu.com/ubuntu/dists/lucid/main/installer-i386/current/images/netboot/mini.iso
 
 После установки системы доустановите необходимые пакеты
 
