@@ -17,7 +17,7 @@ http://archive.ubuntu.com/ubuntu/dists/lucid/main/installer-i386/current/images/
 
 Устанавливаем virtalbox - тут все интуитивно понятно. Запускаем его и создаем новую виртуальную машину (кнопка "Создать" на панели), выделяем 512М RAM, под hdd 20G - чтобы не занимать лишнее место на диске, лучше выбрать "Динамический виртуальный диск".
 
-http://wiki.starterkit-org.googlecode.com/git/images/vb10.png
+http://wiki.starterkit-org.googlecode.com/git/images/vb10.PNG
 
 Назначаем для CD-ROM образ mini.iso 
 {{{
@@ -28,7 +28,7 @@ http://wiki.starterkit-org.googlecode.com/git/images/vb10.png
         указываем путь к mini.iso
 }}}
 
-http://wiki.starterkit-org.googlecode.com/git/images/vb11.png
+http://wiki.starterkit-org.googlecode.com/git/images/vb11.PNG
 
 Стартуем виртуальную машину. 
 {{{
