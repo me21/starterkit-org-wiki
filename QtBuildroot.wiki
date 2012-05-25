@@ -199,6 +199,8 @@ http://starterkit-org.googlecode.com/files/linux-3.2.18-oem.patch - патч д�
 Конфигурация закончена, выбиаем Exit в главном окне, на вопрос 
 Do you wish to save your new configuration? отвечаем < Yes >
 
+Конфиг который получился в итоге можно взять тут [http://wiki.starterkit-org.googlecode.com/git/configs/qt_br.config qt_br.config]
+
 Сборка
 {{{
 make
