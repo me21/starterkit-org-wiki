@@ -36,7 +36,7 @@ cp ~/ctng-atmel/arm-atmel-linux-gnueabi/debug-root/usr/bin/gdbserver fs/skeleton
 }}}
 копируем настройки локального времени для Москвы
 {{{
-cp /home/sasa/ctng-atmel/arm-atmel-linux-gnueabi/sysroot/usr/share/zoneinfo/Europe/Moscow fs/skeleton/etc/localtime
+cp ~/ctng-atmel/arm-atmel-linux-gnueabi/sysroot/usr/share/zoneinfo/Europe/Moscow fs/skeleton/etc/localtime
 }}}
 прописываем настройки сетевого интерфейса
 {{{
