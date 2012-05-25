@@ -31,6 +31,19 @@ http://wiki.starterkit-org.googlecode.com/git/images/vb10.png
 http://wiki.starterkit-org.googlecode.com/git/images/vb11.png
 
 Стартуем виртуальную машину. 
+{{{
+На приглашение "boot" нажать Enter
+выбрать command line install
+Choose a language -> English
+Choose a country -> other -> Europe -> Russian Federation
+Detect keyboard layout -> No
+Origin of the keyboard -> USA
+Keyboard layout -> USA
+Hostname -> Ubuntu
+Ubuntu archive mirror country -> Russian Federation
+Ubuntu archive mirror -> ru.archive.ubuntu.com
+HTTP proxy information -> оставляем пустым
+}}}
 
 После установки системы доустановите необходимые пакеты
 
