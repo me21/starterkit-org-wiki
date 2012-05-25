@@ -1,4 +1,4 @@
-#summary Настройка Qt Creator для работы с buidroot
+#summary Настройка Qt Creator для работы с buildroot
 
 == Введение ==
 
