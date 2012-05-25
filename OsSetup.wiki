@@ -5,9 +5,6 @@
 Описание для Debian/Ubuntu, в частности используется версия Ubuntu 10.04 LTS 32-bit
 http://releases.ubuntu.com/lucid/
 
-Маленький образ для установки по сети 
-https://help.ubuntu.com/community/Lubuntu/Documentation/MinimalInstall
-
 == Установка виртуальной машины ==
 
 Скачиваем установщик с https://www.virtualbox.org/wiki/Downloads, на текущий момент для Windows
@@ -15,8 +12,14 @@ https://help.ubuntu.com/community/Lubuntu/Documentation/MinimalInstall
 VirtualBox 4.1.16 for Windows hosts  x86/amd64 
 }}}
 
-скачиваем установочный образ mini-iso по ссылке
+скачиваем установочный образ mini.iso по ссылке
 http://archive.ubuntu.com/ubuntu/dists/lucid/main/installer-i386/current/images/netboot/mini.iso
+
+Устанавливаем virtalbox - тут все интуитивно понятно. Запускаем его и создаем новую виртуальную машину (кнопка "Создать" на панели), выделяем 512М RAM, под hdd 20G - чтобы не занимать лишнее место на диске, лучше выбрать "Динамический виртуальный диск".
+
+ 
+
+
 
 После установки системы доустановите необходимые пакеты
 
