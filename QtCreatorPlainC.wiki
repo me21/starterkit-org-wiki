@@ -41,3 +41,21 @@ Finish
 target.path = /root
 INSTALLS += target
 }}}
+сохраняем изменения
+{{{
+Меню File -> Save All
+}}}
+открываем вкладку 
+{{{
+3 Application Output
+}}}
+жмем зеленый треугольник Run
+{{{
+Killing remote process(es)...
+Starting remote process...
+Remote process started.
+Hello World!
+Finished running remote process. Exit code was 0.
+}}}
+
+аналогично с приложеними Qt можно удаленно отлаживать приложения запущенные на плате как описано в QtCreatorBR.
