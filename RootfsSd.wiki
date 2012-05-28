@@ -113,3 +113,58 @@ Using default value 1021
 
 Command (m for help): 
 }}}
+назначаем идентификатор первому разделу
+{{{
+Command (m for help): t
+Partition number (1-4): 1
+Hex code (type L to list codes): b
+Changed system type of partition 1 to b (W95 FAT32)
+
+Command (m for help):
+}}}
+второму разделу
+{{{
+Command (m for help): t   
+Partition number (1-4): 2
+Hex code (type L to list codes): 83
+Changed system type of partition 2 to 83 (Linux)
+
+Command (m for help): 
+}}}
+смотрим новую таблицу разделов
+{{{
+Command (m for help): p
+
+Disk /dev/sdb: 7948 MB, 7948206080 bytes
+245 heads, 62 sectors/track, 1021 cylinders
+Units = cylinders of 15190 * 512 = 7777280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x9a024f28
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               1           3       22754    b  W95 FAT32
+/dev/sdb2               4        1021     7731710   83  Linux
+}}}
+сохраняем изменения и выходим из программы
+{{{
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+
+WARNING: If you have created or modified any DOS 6.x
+partitions, please see the fdisk manual page for additional
+information.
+Syncing disks.
+}}}
+форматируем первый раздел в fat32
+{{{
+sudo mkfs.vfat /dev/sdb1
+}}}
+второй раздел в ext2
+{{{
+sudo mkfs.ext2 /dev/sdb2
+}}}
+копируем загрузчик, ядро и корневую ФС на SD
+{{{
