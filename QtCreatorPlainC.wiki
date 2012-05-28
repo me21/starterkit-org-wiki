@@ -10,3 +10,29 @@ Qt Creator можно использовать в качестве [http://ru.wi
 Создаем новый проект File -> New File or Project
 в появившемся окне Non-Qt Project -> Plain C Project -> Choose..
 }}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-New.png
+
+{{{
+набираем название проекта в поле Name -> hello_world
+}}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Plain-C-Project.png
+
+{{{
+Next
+}}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Plain-C-Project-1.png
+
+{{{
+Next
+}}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Plain-C-Project-2.png
+
+{{{
+Finish
+}}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Plain-C-Project-3.png
