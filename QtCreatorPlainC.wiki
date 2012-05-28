@@ -33,6 +33,11 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Plain-C-Project-
 
 {{{
 Finish
+Открываем редактор в меню слева Edit -> hello_world.pro
 }}}
 
-http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Plain-C-Project-3.png
+добавляем две строчки в конец файла hello_world.pro
+{{{
+target.path = /root
+INSTALLS += target
+}}}
