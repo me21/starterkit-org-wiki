@@ -168,3 +168,15 @@ sudo mkfs.ext2 /dev/sdb2
 }}}
 копируем загрузчик, ядро и корневую ФС на SD
 {{{
+cd ~/buildroot-2012.02/
+wget http://starterkit-org.googlecode.com/files/BOOT.BIN
+sudo mount /dev/sdb1 /mnt
+sudo cp BOOT.BIN /mnt
+sudo cp output/images/uImage /mnt
+sudo umount /mnt
+sudo mount /dev/sdb2 /mnt
+sudo tar xzvf output/images/rootfs.tar.gz -C /mnt
+sudo umount /mnt
+}}}
+
+Чтобы загрузка пошла с microSD - удалите перемычку NAND CS на модуле
