@@ -13,6 +13,7 @@ USB Reaer USB Mass Storage Device [0201]
 чтобы узнать название диска - смотрим выхлоп dmesg в терминале - нас интересуют последние записи
 {{{
 dmesg
+...
 [ 3474.733375] sd 4:0:0:0: Attached scsi generic sg2 type 0
 [ 3474.765677] sd 4:0:0:0: [sdb] 15523840 512-byte logical blocks: (7.94 GB/7.40 GiB)
 [ 3474.775780] sd 4:0:0:0: [sdb] Write Protect is off
@@ -22,6 +23,7 @@ dmesg
 [ 3474.824978]  sdb: sdb1 sdb2
 [ 3474.868309] sd 4:0:0:0: [sdb] Assuming drive cache: write through
 [ 3474.868335] sd 4:0:0:0: [sdb] Attached SCSI removable disk
+...
 }}}
 в данном случае мой диск - sdb с двумя первичными разделами sdb1, sdb2. Размонтируем диски (ОС по умолчанию автомонтирует разделы)
 {{{
