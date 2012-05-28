@@ -12,37 +12,26 @@ http://releases.ubuntu.com/lucid/
 VirtualBox 4.1.16 for Windows hosts  x86/amd64 
 }}}
 
-скачиваем установочный образ mini.iso по ссылке
-http://archive.ubuntu.com/ubuntu/dists/lucid/main/installer-i386/current/images/netboot/mini.iso
+скачиваем установочный образ по ссылке
+
+http://se.archive.ubuntu.com/mirror/cdimage.ubuntu.com/xubuntu/releases/lucid/release/xubuntu-10.04.2-desktop-i386.iso
 
 Устанавливаем virtalbox - тут все интуитивно понятно. Запускаем его и создаем новую виртуальную машину (кнопка "Создать" на панели), выделяем 512М RAM, под hdd 20G - чтобы не занимать лишнее место на диске, лучше выбрать "Динамический виртуальный диск".
 
 http://wiki.starterkit-org.googlecode.com/git/images/vb10.PNG
 
-Назначаем для CD-ROM образ mini.iso 
+Назначаем для CD-ROM образ xubuntu-10.04.2-desktop-i386.iso 
 {{{
 Свойства -> Носители
   IDE контроллер -> пусто
     в правой колонке напротив "Привод" нажать иконку с диском
       "Выбрать образ оптического диска"
-        указываем путь к mini.iso
+        указываем путь к xubuntu-10.04.2-desktop-i386.iso
 }}}
-
-http://wiki.starterkit-org.googlecode.com/git/images/vb11.PNG
 
 Стартуем виртуальную машину. 
 {{{
-На приглашение "boot" нажать Enter
-выбрать command line install
-Choose a language -> English
-Choose a country -> other -> Europe -> Russian Federation
-Detect keyboard layout -> No
-Origin of the keyboard -> USA
-Keyboard layout -> USA
-Hostname -> Ubuntu
-Ubuntu archive mirror country -> Russian Federation
-Ubuntu archive mirror -> ru.archive.ubuntu.com
-HTTP proxy information -> оставляем пустым
+
 }}}
 
 После установки системы доустановите необходимые пакеты
