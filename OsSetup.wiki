@@ -18,7 +18,7 @@ http://se.archive.ubuntu.com/mirror/cdimage.ubuntu.com/xubuntu/releases/lucid/re
 
 Устанавливаем virtalbox - тут все интуитивно понятно. Запускаем его и создаем новую виртуальную машину (кнопка "Создать" на панели), выделяем 512М RAM, под hdd 20G - чтобы не занимать лишнее место на диске, лучше выбрать "Динамический виртуальный диск".
 
-http://wiki.starterkit-org.googlecode.com/git/images/vb10.PNG
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-Create-New-Virtual-Machine-3.png
 
 Назначаем для CD-ROM образ xubuntu-10.04.2-desktop-i386.iso 
 {{{
@@ -28,6 +28,8 @@ http://wiki.starterkit-org.googlecode.com/git/images/vb10.PNG
       "Выбрать образ оптического диска"
         указываем путь к xubuntu-10.04.2-desktop-i386.iso
 }}}
+
+http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-xubuntu-Settings.png
 
 Стартуем виртуальную машину. При установке Ubuntu выберите английский язык, отдайте все дисковое постранство под систему. В меню при установке выберите "Install Xubuntu" - не перепутайте с Try (попробовать - система запустится в режиме live CD). 
 После установки системы доустановите необходимые пакеты
