@@ -97,6 +97,12 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-browser-Qt-Creat
 
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-browser-Qt-Creator-2.png
 
+Чтобы назначить директорию в которую проект будет скопирован на плате, измените (или добавьте) в файле .pro, например
+{{{
+target.path = /root/installdir
+INSTALLS += target
+}}}
+ 
 Проект готов к сборке и запуску на плате, нажимаем зеленый треугольник Run на панели слева, на плате через некоторое время после сборки должен появиться браузер Qt Demo Browser: 
 
 http://wiki.starterkit-org.googlecode.com/git/images/qtbrowser.png
