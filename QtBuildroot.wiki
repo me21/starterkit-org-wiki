@@ -171,7 +171,12 @@ Package Selection for the target ->
   Networking applications ->
     [*] openssh
 }}}
-
+Для работы с nand потребуется набор утилит mtd-utils
+{{{
+Package Selection for the target ->
+  Hardware handling ->
+    [*] mtd/jffs2 utilities
+}}}
 В качестве имиджа корневой ФС создаем простой архив tar.gz
 {{{
 Filesystem images ->
