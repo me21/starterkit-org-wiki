@@ -1,8 +1,8 @@
-#summary Перенос корневой ФС на nand
+#summary Перенос корневой ФС на NAND
 
 == Введение ==
 
-Рассмотрен пример, когда проект отлажен на SD и его нужно перенести на nand.
+Рассмотрен пример, когда проект отлажен на SD и его нужно перенести на NAND.
 
 == Процесс загрузки ==
 
@@ -47,7 +47,10 @@ rootfs / rootfs rw 0 0
 }}}
 
 == Монтирование раздела mtd ==
-
+Логинимся в эмуляторе терминала через SSH на плате. 
+{{{
+ssh root@192.168.0.136
+}}}
 Создание ФС UBIFS на разделе (если у вас раздел отформатирован - можно пропустить эти действия, это пример как создать ФС с "нуля")
 {{{
 # ubiformat /dev/mtd1
@@ -68,7 +71,7 @@ ubiattach /dev/ubi_ctrl -m 1
 mount -t ubifs ubi0:nandfs /mnt
 rm -r /mnt/*
 }}}
-непосредственно копирование корневой ФС с SD на nand
+непосредственно копирование корневой ФС с SD на NAND
 {{{
 tar -cf - / --exclude dev --exclude proc --exclude sys --exclude tmp --exclude lost+found | tar -xf - -C /mnt
 mkdir /mnt/dev /mnt/proc /mnt/sys /mnt/tmp
