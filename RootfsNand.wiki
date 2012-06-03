@@ -48,9 +48,15 @@ rootfs / rootfs rw 0 0
 
 == Копирование ядра  загрузчиков ==
 
-Ядру нужно указать, что корневая ФС находится в NAND, для этого запускаем его конфигуратор
+Скачиваем первичный загрузчик (bootstrap) и u-boot
 {{{
 cd ~/buildroot-2012.02
+wget http://starterkit-org.googlecode.com/files/bootstrap
+wget http://starterkit-org.googlecode.com/files/u-boot.bin
+}}}
+
+Ядру нужно указать, что корневая ФС находится в NAND, для этого запускаем его конфигуратор
+{{{
 make linux-menuconfig
 }}}
 изменяем параметры загрузки
@@ -63,18 +69,26 @@ Boot options ->
 {{{
 make
 }}}
-копируем новый имидж ядра на плату в директорию /root
+копируем загрузчики и новый имидж ядра на плату в директорию /root
 {{{
-scp output/images/uImage  root@192.168.0.136:/root
-uImage                                                                               100% 2369KB   2.3MB/s   00:00    
+scp bootstrap root@192.168.0.136:/root
+scp u-boot.bin root@192.168.0.136:/root
+scp output/images/uImage root@192.168.0.136:/root
 }}}
-
 
 == Запись данных на NAND ==
 
 Логинимся в эмуляторе терминала через SSH на плате (можно использовать и терминал через последовательный порт, мне удобней через SSH)
 {{{
 ssh root@192.168.0.136
+}}}
+Записываем загрузчики и ядро
+{{{
+предварительно стираем раздел
+flash_erase /dev/mtd0 0 0
+nandwrite -s 0x0 -p /dev/mtd0 bootstrap
+nandwrite -s 0x20000 -p /dev/mtd0 u-boot.bin
+nandwrite -s 0x80000 -p /dev/mtd0 uImage
 }}}
 Создание ФС UBIFS на разделе (если у вас раздел отформатирован - можно пропустить эти действия, это пример как создать ФС с "нуля")
 {{{
@@ -103,3 +117,9 @@ tar -cf - / --exclude dev --exclude proc --exclude sys --exclude tmp --exclude l
 mkdir /mnt/dev /mnt/proc /mnt/sys /mnt/tmp
 umount /mnt
 }}}
+
+после перезагрузки
+{{{
+reboot
+}}}
+плата загрузится с NAND с копией корневой ФС которая была на SD.
