@@ -45,3 +45,20 @@ rootfs / rootfs rw 0 0
 /dev/root / ext2 rw,relatime,errors=continue 0 0
 ...
 }}}
+
+== Монтирование раздела mtd ==
+
+Создание ФС UBIFS на разделе (если у вас раздел отформатирован - можно пропустить эти действия, это пример как создать ФС с "нуля")
+{{{
+# ubiformat /dev/mtd1
+ubiformat: mtd1 (nand), size 251658240 bytes (240.0 MiB), 1920 eraseblocks of 131072 bytes (128.0 KiB), min. I/O size s
+libscan: scanning eraseblock 1919 -- 100 % complete  
+ubiformat: 1915 eraseblocks have valid erase counter, mean value is 0
+ubiformat: 5 bad eraseblocks found, numbers: 510, 934, 1272, 1534, 1668
+ubiformat: formatting eraseblock 1919 -- 100 % complete  
+}}}
+{{{
+ubiattach /dev/ubi_ctrl -m 1
+ubimkvol /dev/ubi0 -N nandfs -s 200MiB
+mount -t ubifs ubi0:nandfs /mnt
+}}}
