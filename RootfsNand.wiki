@@ -93,6 +93,7 @@ mount -t ubifs ubi0:nandfs /mnt
 {{{
 ubiattach /dev/ubi_ctrl -m 1
 mount -t ubifs ubi0:nandfs /mnt
+удаляем старые данные
 rm -r /mnt/*
 }}}
 непосредственно копирование корневой ФС с SD на NAND
