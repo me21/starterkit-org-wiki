@@ -12,3 +12,26 @@ relocating linux kernel to proper address, dst: 0x70008000, src: 0x72000040, len
 ....   <-- индикатор задержки
 Starting linux kernel ..., machid: 0x8a4, tags: 0x70000100
 }}}
+Если вы успели замкнуть перемычку, в логе загрузки ядра появятся такие строки
+{{{
+...
+atmel_nand atmel_nand: Using dma0chan0 for DMA transfers.
+NAND device: Manufacturer ID: 0xec, Chip ID: 0xda (Samsung NAND 256MiB 3,3V 8-bit)
+Scanning device for bad blocks
+Bad eraseblock 638 at 0x000004fc0000
+Bad eraseblock 1062 at 0x0000084c0000
+Bad eraseblock 1400 at 0x00000af00000
+Bad eraseblock 1662 at 0x00000cfc0000
+Bad eraseblock 1796 at 0x00000e080000
+Creating 2 MTD partitions on "atmel_nand":
+0x000000000000-0x000001000000 : "Boot partition"
+0x000001000000-0x000010000000 : "FS partition"
+...
+}}}
+при этом корневая ФС остается пока еще на SD, это можно легко узнать по типу ФС ext2.
+{{{
+# cat /proc/mounts 
+rootfs / rootfs rw 0 0
+/dev/root / ext2 rw,relatime,errors=continue 0 0
+...
+}}}
