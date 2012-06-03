@@ -54,3 +54,46 @@ root@192.168.0.136's password: 123456
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-mc5.png
 
 файлы можно копирровать/удалять/редактировать как будто они находятся на вашем компьютере.
+
+== Работа в консоли через SSH ==
+
+Для того чтобы каждый раз не вводить пароль, нужно сгенерировать пару закрытый+открытый ключ на хост-системе, скопировать на плату открытый ключ и добавить о нем информацию для пользователя от чьего имени будем работать на плате (root). Нужно выполнить команду ssh-keygen -t rsa, на все вопросы можно отвечать нажатием [Enter]
+{{{
+ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/sasa/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/sasa/.ssh/id_rsa.
+Your public key has been saved in /home/sasa/.ssh/id_rsa.pub.
+}}}  
+копируем открытый ключ на плату 
+{{{
+scp /home/sasa/.ssh/id_rsa.pub root@192.168.0.136:/root
+root@192.168.0.136's password: 123456
+}}}
+заходим на плату через SSH  и добавляем информацию о ключе
+{{{
+ssh root@192.168.0.136
+root@192.168.0.136's password: 123456
+mkdir ~/.ssh
+cat id_rsa.pub > ~/.ssh/authorized_keys
+exit
+}}}
+
+Теперь мы можем выполнять удаленно команды на плате, при этом пароль не потребуется. Например посмотрим информацию о процессоре, выполнив в терминале на хост-системе
+{{{
+ssh root@192.168.0.136 cat /proc/cpuinfo
+Processor	: ARM926EJ-S rev 5 (v5l)
+BogoMIPS	: 199.06
+Features	: swp half thumb fastmult edsp java 
+CPU implementer	: 0x41
+CPU architecture: 5TEJ
+CPU variant	: 0x0
+CPU part	: 0x926
+CPU revision	: 5
+
+Hardware	: Atmel AT91SAM9M10G45-EK
+Revision	: 0000
+Serial		: 0000000000000000
+}}}
