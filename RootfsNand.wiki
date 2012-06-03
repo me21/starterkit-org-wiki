@@ -88,7 +88,7 @@ Boot options ->
   (console=ttyS0,115200 ubi.mtd=1 root=ubi0:nandfs rw rootfstype=ubifs) Default kernel command string
     Kernel command line type (Always use the default kernel command string) 
 }}}
-выходит из конфигуратора и запускаем сборку 
+выходим из конфигуратора и запускаем сборку 
 {{{
 make
 }}}
