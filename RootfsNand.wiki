@@ -46,8 +46,32 @@ rootfs / rootfs rw 0 0
 ...
 }}}
 
+== Подготовка ядра ==
+
+Ядру нужно указать, что корневая ФС находится в NAND, для этого запускаем его конфигуратор
+{{{
+cd ~/buildroot-2012.02
+make linux-menuconfig
+}}}
+изменяем параметры загрузки
+{{{
+Boot options ->
+  (console=ttyS0,115200 ubi.mtd=1 root=ubi0:nandfs rw rootfstype=ubifs) Default kernel command string
+    Kernel command line type (Always use the default kernel command string) 
+}}}
+выходим из конфигуратора и запускаем сборку 
+{{{
+make
+}}}
+копируем новый имидж ядра на плату в директорию /root
+{{{
+scp output/images/uImage  root@192.168.0.136:/root
+uImage                                                                               100% 2369KB   2.3MB/s   00:00    
+}}}
+
 == Монтирование раздела mtd ==
-Логинимся в эмуляторе терминала через SSH на плате. 
+
+Логинимся в эмуляторе терминала через SSH на плате (можно использовать и терминал через последовательный порт, мне удобней через SSH)
 {{{
 ssh root@192.168.0.136
 }}}
@@ -76,28 +100,4 @@ rm -r /mnt/*
 tar -cf - / --exclude dev --exclude proc --exclude sys --exclude tmp --exclude lost+found | tar -xf - -C /mnt
 mkdir /mnt/dev /mnt/proc /mnt/sys /mnt/tmp
 umount /mnt
-}}}
-
-== Подготовка ядра ==
-
-Ядру нужно указать, что корневая ФС находится в nand, для этого запускаем его конфигуратор
-{{{
-cd ~/buildroot-2012.02
-make linux-menuconfig
-}}}
-изменяем параметры загрузки
-{{{
-Boot options ->
-  (console=ttyS0,115200 ubi.mtd=1 root=ubi0:nandfs rw rootfstype=ubifs) Default kernel command string
-    Kernel command line type (Always use the default kernel command string) 
-}}}
-выходим из конфигуратора и запускаем сборку 
-{{{
-make
-}}}
-копируем новый имидж ядра на плату в директорию /root
-{{{
-scp output/images/uImage  root@192.168.0.136:/root
-root@192.168.0.136's password: 123456
-uImage                                                                               100% 2369KB   2.3MB/s   00:00    
 }}}
