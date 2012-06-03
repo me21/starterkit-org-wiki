@@ -94,7 +94,7 @@ nandwrite -s 0x0 -p /dev/mtd0 bootstrap
 nandwrite -s 0x20000 -p /dev/mtd0 u-boot.bin
 nandwrite -s 0x80000 -p /dev/mtd0 uImage
 }}}
-Создание ФС UBIFS на разделе (если у вас раздел отформатирован - можно пропустить эти действия, это пример как создать ФС с "нуля")
+Создание ФС UBIFS на втором (по счету) разделе (если у вас раздел отформатирован - можно пропустить эти действия, это пример как создать ФС с "нуля")
 {{{
 # ubiformat /dev/mtd1
 ubiformat: mtd1 (nand), size 251658240 bytes (240.0 MiB), 1920 eraseblocks of 131072 bytes (128.0 KiB), min. I/O size s
