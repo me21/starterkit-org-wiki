@@ -46,7 +46,7 @@ rootfs / rootfs rw 0 0
 ...
 }}}
 
-== Копирование ядра  загрузчиков ==
+== Копирование ядра и загрузчиков ==
 
 Скачиваем первичный загрузчик (bootstrap) и u-boot
 {{{
@@ -74,6 +74,10 @@ make
 scp bootstrap root@192.168.0.136:/root
 scp u-boot.bin root@192.168.0.136:/root
 scp output/images/uImage root@192.168.0.136:/root
+}}}
+если вы хотите записать ФС собранную в buildroot а не пернести с SD, скопируйте её имидж (архив)
+{{{
+scp output/images/rootfs.tar.gz root@192.168.0.136:/root
 }}}
 
 == Запись данных на NAND ==
@@ -117,9 +121,14 @@ tar -cf - / --exclude dev --exclude proc --exclude sys --exclude tmp --exclude l
 mkdir /mnt/dev /mnt/proc /mnt/sys /mnt/tmp
 umount /mnt
 }}}
+если записываете имидж собранный в buildroot, а не переносите с SD
+{{{
+tar xzf rootfs.tar.gz -C /mnt
+umount /mnt
+}}}
 
 после перезагрузки
 {{{
 reboot
 }}}
-плата загрузится с NAND с копией корневой ФС которая была на SD.
+плата загрузится с NAND с копией корневой ФС которая была на SD (или собранной в buildroot если вы записывали имидж).
