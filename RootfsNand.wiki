@@ -74,3 +74,21 @@ tar -cf - / --exclude dev --exclude proc --exclude sys --exclude tmp --exclude l
 mkdir /mnt/dev /mnt/proc /mnt/sys /mnt/tmp
 umount /mnt
 }}}
+
+== Подготовка ядра ==
+
+Ядру нужно указать, что корневая ФС находится в nand, для этого запускаем его конфигуратор
+{{{
+cd ~/buildroot-2012.02
+make linux-menuconfig
+}}}
+изменяем параметры загрузки
+{{{
+Boot options ->
+  (console=ttyS0,115200 ubi.mtd=1 root=ubi0:nandfs rw rootfstype=ubifs) Default kernel command string
+    Kernel command line type (Always use the default kernel command string) 
+}}}
+выходит из конфигуратора и запускаем сборку 
+{{{
+make
+}}}
