@@ -62,3 +62,15 @@ ubiattach /dev/ubi_ctrl -m 1
 ubimkvol /dev/ubi0 -N nandfs -s 200MiB
 mount -t ubifs ubi0:nandfs /mnt
 }}}
+если нужно смонтировать имеющуюся ФС
+{{{
+ubiattach /dev/ubi_ctrl -m 1
+mount -t ubifs ubi0:nandfs /mnt
+rm -r /mnt/*
+}}}
+непосредственно копирование корневой ФС с SD на nand
+{{{
+tar -cf - / --exclude dev --exclude proc --exclude sys --exclude tmp --exclude lost+found | tar -xf - -C /mnt
+mkdir /mnt/dev /mnt/proc /mnt/sys /mnt/tmp
+umount /mnt
+}}}
