@@ -92,3 +92,9 @@ Boot options ->
 {{{
 make
 }}}
+копируем новый имидж ядра на плату в директорию /root
+{{{
+scp output/images/uImage  root@192.168.0.136:/root
+root@192.168.0.136's password: 123456
+uImage                                                                               100% 2369KB   2.3MB/s   00:00    
+}}}
