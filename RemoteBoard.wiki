@@ -4,6 +4,32 @@
 
 Некоторые полезные советы по удаленной работе с платой. Предполагается что на плате запущен SSH-сервер.
 
+== Использование ключей для беспарольной работы с SSH ==
+
+Для того чтобы каждый раз не вводить пароль, нужно сгенерировать пару закрытый+открытый ключ на хост-системе, скопировать на плату открытый ключ и добавить о нем информацию для пользователя от чьего имени будем работать на плате (root). Нужно выполнить команду ssh-keygen -t rsa, на все вопросы можно отвечать нажатием [Enter]
+{{{
+ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/sasa/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/sasa/.ssh/id_rsa.
+Your public key has been saved in /home/sasa/.ssh/id_rsa.pub.
+}}}  
+копируем открытый ключ на плату 
+{{{
+scp /home/sasa/.ssh/id_rsa.pub root@192.168.0.136:/root
+root@192.168.0.136's password: 123456
+}}}
+заходим на плату через SSH  и добавляем информацию о ключе
+{{{
+ssh root@192.168.0.136
+root@192.168.0.136's password: 123456
+mkdir ~/.ssh
+cat id_rsa.pub > ~/.ssh/authorized_keys
+exit
+}}}
+
 == Файловый менеджер Midnight Commander (mc) ==
 
 Для начинающих пользователей Linux будет полезен этот файловый менеджер https://www.midnight-commander.org/, работающий в консольном режиме. Не стоит увлекаться им - описываю только для быстрого старта новичков - в дальнейшем вы поймете что никакой файловый менеджер или графический фронтенд облегчающий работу не заменит командную строку - работа в консоли намного удобней. Установка и запуск на host-системе. Для начала нужно удалить (если он установлен) mc идущий в дистрибутиве, там есть баг с неправильным отображением имен файлов на удаленной системе при работе с SSH.
@@ -40,7 +66,7 @@ Shell link to machine -> root@192.168.0.136
 
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-mc3.png
 
-В командной строке внизу появится приглашение для ввода пароля
+Если не используются ключи SSH, в командной строке внизу появится приглашение для ввода пароля
 
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-mc4.png
 
@@ -57,31 +83,7 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-mc5.png
 
 == Работа в консоли через SSH ==
 
-Для того чтобы каждый раз не вводить пароль, нужно сгенерировать пару закрытый+открытый ключ на хост-системе, скопировать на плату открытый ключ и добавить о нем информацию для пользователя от чьего имени будем работать на плате (root). Нужно выполнить команду ssh-keygen -t rsa, на все вопросы можно отвечать нажатием [Enter]
-{{{
-ssh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/sasa/.ssh/id_rsa): 
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in /home/sasa/.ssh/id_rsa.
-Your public key has been saved in /home/sasa/.ssh/id_rsa.pub.
-}}}  
-копируем открытый ключ на плату 
-{{{
-scp /home/sasa/.ssh/id_rsa.pub root@192.168.0.136:/root
-root@192.168.0.136's password: 123456
-}}}
-заходим на плату через SSH  и добавляем информацию о ключе
-{{{
-ssh root@192.168.0.136
-root@192.168.0.136's password: 123456
-mkdir ~/.ssh
-cat id_rsa.pub > ~/.ssh/authorized_keys
-exit
-}}}
-
-Теперь мы можем выполнять удаленно команды на плате, при этом пароль не потребуется. Например посмотрим информацию о процессоре, выполнив в терминале на хост-системе
+Мы можем выполнять удаленно команды на плате из терминала на хост-системе. Например посмотрим информацию о процессоре, выполнив в терминале на хост-системе
 {{{
 ssh root@192.168.0.136 cat /proc/cpuinfo
 Processor	: ARM926EJ-S rev 5 (v5l)
