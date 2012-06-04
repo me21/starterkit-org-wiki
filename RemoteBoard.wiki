@@ -99,4 +99,25 @@ Hardware	: Atmel AT91SAM9M10G45-EK
 Revision	: 0000
 Serial		: 0000000000000000
 }}}
+Работу можно еще упростить, если определить alias (псевдоним) для сокращенного набора. Например
+{{{
+alias oem="ssh root@192.168.0.136"
+}}}
+теперь, чтобы выполнить команду на удаленной системе в терминале хост-системы достаточно набрать
+{{{
+sasa@sasa-laptop:/$ oem cat /proc/cpuinfo 
+Processor	: ARM926EJ-S rev 5 (v5l)
+BogoMIPS	: 199.06
+Features	: swp half thumb fastmult edsp java 
+CPU implementer	: 0x41
+CPU architecture: 5TEJ
+CPU variant	: 0x0
+CPU part	: 0x926
+CPU revision	: 5
+
+Hardware	: Atmel AT91SAM9M10G45-EK
+Revision	: 0000
+Serial		: 0000000000000000
+}}}
+
 В дальнейшем вы увидите насколько удобно работать в консоли.
