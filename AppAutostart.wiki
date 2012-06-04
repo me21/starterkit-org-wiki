@@ -1,0 +1,92 @@
+#summary Автозапуск приложений при старте системы
+
+== Веедение ==
+
+Автозапуск приложений можно осуществить несколькими способами. 
+
+== Загрузочные скрипты buildroot ==
+
+Для автозапуска своего приложения с правами root можно написать небольшой скрипт. Загрузочные скрипты находятся в какталоге /etc/init.d/
+{{{
+ssh root@192.168.0.136 ls /etc/init.d/
+S01logging
+S10udev
+S20urandom
+S30dbus
+S40network
+S50sshd
+rcK
+rcS
+}}}
+Скрипты запуска rcS и завершения rcK вызываются в /etc/inittab
+{{{
+ssh root@192.168.0.136 grep /etc/init.d/rc /etc/inittab
+::sysinit:/etc/init.d/rcS
+null::shutdown:/etc/init.d/rcK
+}}}
+они находят в своем каталоге файлы по шаблону S??* и выполняют их с параметрами в зависимости от того что нужно стартовать или завершать их
+{{{
+ssh root@192.168.0.136 cat /etc/init.d/rcS
+#!/bin/sh
+
+
+# Start all init scripts in /etc/init.d
+# executing them in numerical order.
+#
+for i in /etc/init.d/S??* ;do
+
+     # Ignore dangling symlinks (if any).
+     [ ! -f "$i" ] && continue
+
+     case "$i" in
+	*.sh)
+	    # Source shell script for speed.
+	    (
+		trap - INT QUIT TSTP
+		set start
+		. $i
+	    )
+	    ;;
+	*)
+	    # No sh extension, so fork subprocess.
+	    $i start
+	    ;;
+    esac
+done
+}}}
+номер после S в названии скриптов влияет на порядок их выполнения - чем он меньше, тем раньше скрипт будет запущен. Сделаем свой скипт запуска, чтобы он стартовал после инициализации демонов и системных служб - назначим ему номер по-больше
+{{{
+cd ~/buildroot-2012.02
+touch S90app
+chmod +x S90app
+}}}
+с таким содержанием
+{{{
+#!/bin/sh
+
+APP_BIN=browser
+APP_PATH=/usr/bin/browser
+
+# Check for missing binaries
+test -x $APP_PATH/$APP_BIN || exit 5
+
+case "$1" in
+    start)
+        # Before usage, a touchscreen needs to be calibrated
+        test -f /etc/pointercal || ts_calibrate
+        echo -n "Starting $APP_BIN: "
+        $APP_PATH/$APP_BIN -qws &
+        echo "done"
+        ;;
+    stop)
+        killall $APP_BIN
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+        exit 1
+        ;;
+esac
+
+exit 0
+}}}
+предполагается что наше приложение находится в директории /usr/bin/browser и называется browser. Перед запуском проверяется наличие файла /etc/pointercal, если его нет (тачскрин не откалиброван) запускается ts_calibrate.
