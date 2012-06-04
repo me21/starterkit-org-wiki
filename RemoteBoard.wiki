@@ -105,7 +105,7 @@ alias oem="ssh root@192.168.0.136"
 }}}
 теперь, чтобы выполнить команду на удаленной системе в терминале хост-системы достаточно набрать
 {{{
-sasa@sasa-laptop:/$ oem cat /proc/cpuinfo 
+oem cat /proc/cpuinfo 
 Processor	: ARM926EJ-S rev 5 (v5l)
 BogoMIPS	: 199.06
 Features	: swp half thumb fastmult edsp java 
