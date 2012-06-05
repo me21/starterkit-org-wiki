@@ -1,4 +1,4 @@
-#summary Сборка Qt в Buildroot
+#summary Сборка ядра и корневой ФС с поддержкой Qt в buildroot
 
 == Введение ==
 
