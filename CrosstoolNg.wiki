@@ -104,3 +104,9 @@ Companion libraries  --->
 ct-ng build
 }}}
 на моем 2-ядерном селероне 1,8 ГГц, ОЗУ 2 Гб она занимает примерно 40 минут. Конфиг который поучился в результате можно взять тут [http://wiki.starterkit-org.googlecode.com/git/configs/atmel.config atmel.config]
+
+Добавляем путь к кросскомпилятору в переменную окружения PATH
+{{{
+echo 'export PATH="~/ctng-atmel/bin:$PATH"' >> ~/.bashrc
+source  ~/.bashrc
+}}}
