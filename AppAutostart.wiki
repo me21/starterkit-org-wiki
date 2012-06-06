@@ -18,7 +18,7 @@ S50sshd
 rcK
 rcS
 }}}
-Скрипты запуска rcS и завершения rcK вызываются в /etc/inittab
+Скрипты запуска rcS и завершения rcK прописаны в конфиге init - /etc/inittab
 {{{
 ssh root@192.168.0.136 grep /etc/init.d/rc /etc/inittab
 ::sysinit:/etc/init.d/rcS
