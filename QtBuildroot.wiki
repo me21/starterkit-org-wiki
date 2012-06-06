@@ -53,7 +53,7 @@ echo "hosts:    files dns" > fs/skeleton/etc/nsswitch.conf
 }}}
 вносим настройки tslib и мышки 
 {{{
-printf "\nexport QWS_MOUSE_PROTO=\"Tslib:/dev/input/event0 Auto\"\nexport TSLIB_TSDEVICE=\"/dev/input/event0\"\nexport TSLIB_TSCALIBFILE=\"/etc/pointercal\"\n" >> fs/skeleton/etc/profile
+printf "\nexport QWS_MOUSE_PROTO=\"Tslib:/dev/input/event0\"\nexport TSLIB_TSDEVICE=\"/dev/input/event0\"\nexport TSLIB_TSCALIBFILE=\"/etc/pointercal\"\n" >> fs/skeleton/etc/profile
 }}}
 корректируем конфиг по умолчанию для busybox - для удаленной отладки в Qt Creator нам потребуется pgrep и pkill
 {{{
