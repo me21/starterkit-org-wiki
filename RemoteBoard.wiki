@@ -18,7 +18,7 @@ Your public key has been saved in /home/sasa/.ssh/id_rsa.pub.
 }}}  
 копируем открытый ключ на плату 
 {{{
-scp /home/sasa/.ssh/id_rsa.pub root@192.168.0.136:/root
+scp ~/.ssh/id_rsa.pub root@192.168.0.136:/root
 root@192.168.0.136's password: 123456
 }}}
 заходим на плату через SSH  и добавляем информацию о ключе
