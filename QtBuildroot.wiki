@@ -193,7 +193,7 @@ Kernel ->
   (3.2.18) Kernel version
   Custom kernel patches -> 
     скопируйте и вставьте эти две ссылки через пробел
-    http://www.kernel.org/pub/linux/kernel/projects/rt/3.2/patch-3.2.18-rt29.patch.bz2
+    http://www.kernel.org/pub/linux/kernel/projects/rt/3.2/older/patch-3.2.18-rt29.patch.bz2
     http://starterkit-org.googlecode.com/files/linux-3.2.18-oem.patch
   Kernel configuration (Using a defconfig)
   (at91sam9g45sd7) Defconfig name
