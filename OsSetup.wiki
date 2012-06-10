@@ -37,7 +37,7 @@ http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-xubuntu-Settings
 {{{
 sudo apt-get install -y build-essential gcc g++ autoconf automake libtool bison flex gettext 
 sudo apt-get install -y patch subversion texinfo wget git-core
-sudo apt-get install -y libncurses5 libncurses5-dev
+sudo apt-get install -y libncurses5 libncurses5-dev python-dev
 sudo apt-get install -y zlib1g-dev liblzo2-2 liblzo2-dev
 sudo apt-get install -y libacl1 libacl1-dev gawk cvs curl lzma expat libexpat-dev
 sudo apt-get install -y uuid-dev mercurial
