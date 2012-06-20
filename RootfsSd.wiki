@@ -30,6 +30,10 @@ dmesg
 sudo umount /dev/sdb1
 sudo umount /dev/sdb2
 }}}
+или тоже самое одной командой
+{{{
+sudo umount /dev/sdb*
+}}}
 Удаляем таблицу разделов
 {{{
 sudo dd if=/dev/zero of=/dev/sdb bs=512 count=1 && sync
