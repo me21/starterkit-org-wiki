@@ -4,7 +4,21 @@
 
 Сборка протестирована на Ubuntu 10.04 64-bit, Intel(R) Celeron(R) 2 CPU P4500 1.87GHz RAM 8Gb и заняла около 1,5 часов. Для теста можно скачать готовые бинарные имиджи.  
 
-== Установка sun-java6-jdk ==
+== Подготовка host-системы ==
+
+Официальный мануал 
+
+http://source.android.com/source/initializing.html
+
+Устанавливаем необходимые пакеты
+
+{{{
+sudo apt-get install git-core gnupg flex bison gperf build-essential \
+  zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
+  x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
+  libxml2-utils xsltproc
+}}}
 
 Для сборки Android Gingerbread требуется sun-java6-jdk, так как Canonical удалили его из репозиториев Ubuntu и перешли на OpenJDK, требуется установить его вручную, самый простой способ - воспользоваться готовым скриптом для автоматической сборки deb-пакетов с Sun Java 6.
 
