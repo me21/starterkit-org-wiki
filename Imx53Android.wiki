@@ -1,0 +1,21 @@
+#summary Сборка и установка Android Gingerbread для SK-iMX53
+
+== Введение ==
+
+Сборка протестирована на Ubuntu 10.04 64-bit, Intel(R) Celeron(R) 2 CPU P4500 1.87GHz RAM 8Gb и заняла около 1,5 часов. Для теста можно скачать готовые бинарные имиджи.  
+
+== Установка sun-java6-jdk ==
+
+Так как Canonical удалили sun-java6-jdk (требуется для сборки Android) из репозиториев Ubuntu и перешли на OpenJDK, требуется установить его вручную, самый простой способ - воспользоваться готовым скриптом для автоматической сборки deb-пакетов с Sun Java 6.
+
+{{{
+cd ~/
+wget https://github.com/flexiondotorg/oab-java6/raw/0.2.4/oab-java.sh -O oab-java.sh
+chmod +x oab-java.sh
+sudo ./oab-java.sh
+}}}
+
+после этого можно установить обычным для Ubuntu методом
+{{{
+sudo apt-get install sun-java6-jdk
+}}}
