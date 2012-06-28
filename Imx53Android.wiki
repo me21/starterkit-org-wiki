@@ -76,3 +76,16 @@ sudo ./oab-java.sh
 {{{
 sudo apt-get install sun-java6-jdk
 }}}
+
+Установка BSP. Скачиваем архив с патчами и скриптами
+{{{
+mkdir -p ~/work
+cd ~/work
+wget http://starterkit-org.googlecode.com/files/i.MX53-SK-Android-Gingerbread-Release4.2.tar.bz2
+tar xjvf i.MX53-SK-Android-Gingerbread-Release4.2.tar.bz2
+}}}
+скачиваем исходники Android
+{{{
+cd i.MX53-SK-Android-Gingerbread-Release4.2/scripts/
+./download_android.sh
+}}}
