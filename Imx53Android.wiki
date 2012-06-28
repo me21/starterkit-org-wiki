@@ -109,3 +109,10 @@ cd i.MX53-SK-Android-Gingerbread-Release4.2/scripts/
 {{{
 ./build_android.sh --board=imx53_qsb --build-choice=all --lunch-type=eng --cpus-android=2
 }}}
+
+запись на SD собранных имиджей аналогично с описанным выше, только название скрипта flash_android.sh
+{{{
+./flash_android.sh /dev/sdc
+}}}
+
+разумется название устройства вам нужно определить на своей системе.
