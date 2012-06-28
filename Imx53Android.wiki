@@ -95,7 +95,7 @@ cd i.MX53-SK-Android-Gingerbread-Release4.2/scripts/
 {{{
 ./patch_android.sh
 }}}
-накладываем патчи для платформы QSB и патчи для плат starterkit
+накладываем патчи для платформы QSB (этот скрипт добавит также и starterkit-специфичные патчи)
 {{{
 ./apply_qsb_patch.sh
 }}}
