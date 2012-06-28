@@ -44,7 +44,10 @@ dmesg
 setenv 'mmc_read' 'mmc rescan; mmc read 0x70800000 0x800 0x2000; mmc read 0x70D00000 0x3000 0x300' 
 setenv 'bootcmd' 'run mmc_read; bootm 0x70800000 0x70D00000'
 saveenv
+reset
 }}}
+
+если у вас c u-boot все в порядке - загрузится Android с microSD.
 
 == Сборка Android из исходников ==
 === Подготовка host-системы ===
