@@ -15,7 +15,36 @@ tar xjvf android_img.tar.bz2
 cd android_img/scripts
 }}}
 
+Смотрим как называется наш диск, куда будем устанавливать 
+{{{
+dmesg
+...
+[ 5748.495632] scsi 23:0:0:0: Direct-Access     Generic- Multi-Card       1.00 PQ: 0 ANSI: 0 CCS
+[ 5748.509955] sd 23:0:0:0: Attached scsi generic sg4 type 0
+[ 5749.178288] sd 23:0:0:0: [sdc] 15523840 512-byte logical blocks: (7.94 GB/7.40 GiB)
+[ 5749.179132] sd 23:0:0:0: [sdc] Write Protect is off
+[ 5749.179140] sd 23:0:0:0: [sdc] Mode Sense: 03 00 00 00
+[ 5749.179988] sd 23:0:0:0: [sdc] No Caching mode page present
+[ 5749.179996] sd 23:0:0:0: [sdc] Assuming drive cache: write through
+[ 5749.184273] sd 23:0:0:0: [sdc] No Caching mode page present
+[ 5749.184280] sd 23:0:0:0: [sdc] Assuming drive cache: write through
+[ 5749.190507]  sdc: sdc1 sdc2 
+[ 5749.195331] sd 23:0:0:0: [sdc] No Caching mode page present
+[ 5749.195339] sd 23:0:0:0: [sdc] Assuming drive cache: write through
+[ 5749.195345] sd 23:0:0:0: [sdc] Attached SCSI removable disk
+}}}
 
+для упрощения установки воспользуемся скриптом, единственный параметр которого - имя файла устройства на которое устанавливается Android, в данном случае /dev/sdc
+{{{
+./flash_prebuilt_android.sh /dev/sdc
+}}}
+
+Для запуска Android c SD нужно скорректировать переменные окружения u-boot
+{{{
+setenv 'mmc_read' 'mmc rescan; mmc read 0x70800000 0x800 0x2000; mmc read 0x70D00000 0x3000 0x300' 
+setenv 'bootcmd' 'run mmc_read; bootm 0x70800000 0x70D00000'
+saveenv
+}}}
 
 
 == Подготовка host-системы ==
