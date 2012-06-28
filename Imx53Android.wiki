@@ -77,7 +77,9 @@ sudo ./oab-java.sh
 sudo apt-get install sun-java6-jdk
 }}}
 
-Установка BSP. Скачиваем архив с патчами и скриптами
+=== Установка BSP === 
+
+Скачиваем архив с патчами и скриптами
 {{{
 mkdir -p ~/work
 cd ~/work
@@ -88,4 +90,12 @@ tar xjvf i.MX53-SK-Android-Gingerbread-Release4.2.tar.bz2
 {{{
 cd i.MX53-SK-Android-Gingerbread-Release4.2/scripts/
 ./download_android.sh
+}}}
+накладываем патчи для i.MX53 
+{{{
+./patch_android.sh
+}}}
+накладываем патчи для платформы QSB и патчи для плат starterkit
+{{{
+./apply_qsb_patch.sh
 }}}
