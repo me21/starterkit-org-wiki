@@ -105,7 +105,7 @@ cd i.MX53-SK-Android-Gingerbread-Release4.2/scripts/
 
 === Сборка Android ===
 
-Непосредственно сборка, например для двухядерного процессора (на host-системе) 
+Непосредственно сборка, например для host-системы c двухядерным процессором  
 {{{
 ./build_android.sh --board=imx53_qsb --build-choice=all --lunch-type=eng --cpus-android=2
 }}}
