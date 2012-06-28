@@ -2,7 +2,21 @@
 
 == Введение ==
 
-Сборка протестирована на Ubuntu 10.04 64-bit, Intel(R) Celeron(R) 2 CPU P4500 1.87GHz RAM 8GB и заняла около 1.5 часов. Для теста можно скачать готовые бинарные имиджи.  
+Сборка протестирована на Ubuntu 10.04 64-bit, Intel(R) Celeron(R) 2 CPU P4500 1.87GHz RAM 8GB и заняла около 1.5 часов, в процессе сборки из исходников потребуется скачать ~6 ГБ данных из Интернет. Android устанавливается на microSD.
+
+== Установка готовых имиджей ==
+
+Для тестирования можно установить готовые имиджи, скачиваем и распаковываем
+{{{
+mkdir -p ~/work
+cd ~/work
+wget http://starterkit-org.googlecode.com/files/android_img.tar.bz2
+tar xjvf android_img.tar.bz2
+cd android_img/scripts
+}}}
+
+
+
 
 == Подготовка host-системы ==
 
