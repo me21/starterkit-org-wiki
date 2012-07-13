@@ -23,12 +23,12 @@ Options ->
 
 появится диалоговое окно настройки. Выберите профиль mx23sk на вкладке Profiles
 
-
+http://wiki.starterkit-org.googlecode.com/git/images/mfg_profile.png
 
 на этой же вкладке в таблице в поле Options выберите необходимое действие:
   * Flashing NAND - записать ядро и корневую ФС на nand (предварительно nand будет очищена)
   * Scrub NAND - аналог nand scrub в u-boot - полная очистка nand, включая информацию о bad blocks
 
-
+http://wiki.starterkit-org.googlecode.com/git/images/mfg_options.png
 
 В большинстве случаев достаточно Flashing NAND, Scrub NAND может пригодиться если в nand записалась ошибочная информация о bad blocks, применяйте ее только в крайних случаях.
