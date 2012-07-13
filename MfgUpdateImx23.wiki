@@ -26,8 +26,8 @@ Options ->
 
 
 на этой же вкладке в таблице в поле Options выберите необходимое действие:
-* Flashing NAND - записать ядро и корневую ФС на nand (предварительно nand будет очищена)
-* Scrub NAND - аналог nand scrub в u-boot - полная очистка nand, включая информацию о bad blocks
+  * Flashing NAND - записать ядро и корневую ФС на nand (предварительно nand будет очищена)
+  * Scrub NAND - аналог nand scrub в u-boot - полная очистка nand, включая информацию о bad blocks
 
 
 
