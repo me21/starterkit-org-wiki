@@ -123,7 +123,7 @@ umount /mnt
 }}}
 если записываете имидж собранный в buildroot, а не переносите с SD
 {{{
-tar xzf rootfs.tar.gz -C /mnt
+gunzip -c rootfs.tar.gz | tar -xf - -C /mnt
 umount /mnt
 }}}
 
