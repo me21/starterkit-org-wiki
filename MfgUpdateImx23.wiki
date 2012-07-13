@@ -62,7 +62,7 @@ Done
 По умолчанию загружается ядро 2.6.35-11.09.01 и консольный имидж с mplayer, mtd-utils и kobs-ng. Чтобы записать свои имиджи достаточно заменить файлы
 
 {{{
-mfg\Profiles\mx23sk\OS Firmware\files\
+mfgtool\Profiles\mx23sk\OS Firmware\files\
   linux.sb, rootfs.tar.gz
 }}}
 
