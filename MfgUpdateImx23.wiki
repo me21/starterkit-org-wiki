@@ -1,4 +1,4 @@
-#summary Прошивка i.mx23 утилитой mfgtool
+#summary Прошивка SK-iMX233 утилитой mfgtool
 
 == Введение ==
 
