@@ -104,7 +104,7 @@ System configuration ->
   /dev management (Dynamic using udev)
 }}}
 
-*Примечание:* _вместо ttyS0 нужно прописать в качестве порта getty для i.mx23 - ttyAM0, для i.mx53 - ttyMXC0_
+*Примечание:* _вместо ttyS0 нужно прописать в качестве порта getty для i.mx23 - ttyAM0, для i.mx53 - ttymxc0_
 
  
 http://wiki.starterkit-org.googlecode.com/git/images/Screenshot-buildroot-2012.02-3.png
