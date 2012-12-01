@@ -4,7 +4,7 @@
 
 Описание для Debian/Ubuntu, в частности используется версия Ubuntu 10.04 LTS 32-bit
 http://releases.ubuntu.com/lucid/
-Руководство пользователя Ubuntu 10.04 на русском языке можно скачать тут http://launchpad.net/ubuntu-russian-guide/lucid-guide/lucid-guide-1.1/+download/lucid-guide.pdf
+Руководство пользователя Ubuntu 10.04 на русском языке (Pdf версия руководства по Ubuntu 10.04 LTS "Lucid Lynx") можно скачать тут http://help.ubuntu.ru/manual/pdf
 
 == Установка виртуальной машины ==
 
