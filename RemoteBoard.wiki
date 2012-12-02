@@ -43,7 +43,7 @@ exit
 dpkg -i mc_4.7.5.6-1_i386.deb 
 }}}
 
-*Ubuntu 10.04* Для установки стабильной версии 4.7.5  
+*Ubuntu 10.04* Для установки стабильной версии 4.7.5 удобней и правильней воспользоваться [https://help.launchpad.net/Packaging/PPA PPA]  
 {{{
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update
