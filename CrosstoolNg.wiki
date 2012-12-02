@@ -4,7 +4,7 @@
 
 Несколько слов про сборку KK (здесь и далее по тексту КК - кросскомпилятор), если вам по какой-то причине не подходят готовые, например 
 http://sourcery.mentor.com/public/gnu_toolchain/
-Протестировано на системе http://code.google.com/p/starterkit-org/wiki/OsSetup
+Протестировано на системе OsSetup
 
 == Описание ==
 
