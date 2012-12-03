@@ -11,22 +11,19 @@ http://sourcery.mentor.com/public/gnu_toolchain/
 Чтобы облегчить себе жизнь - воспользуемся средством автоматизации сборки
 http://crosstool-ng.org/
 Далее описание для версии 1.15.2 - это последняя на данный момент. 
-Устанавливаем скрипты сборки
+Распаковываем, конфигурируем для локального (без установки) использования и собираем скрипты сборки
 {{{
-mkdir ~/work
+mkdir -p ~/work
 cd ~/work
 wget http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.15.2.tar.bz2
 tar xjvf crosstool-ng-1.15.2.tar.bz2
 cd crosstool-ng-1.15.2
-./configure
+./configure --enable-local
 make 
-sudo make install
 }}}
-приступаем к конфигурированию кросскомпилятора
+приступаем к конфигурированию кросскомпилятора (в той же директории куда распаковали скрипты)
 {{{
-mkdir ~/work/ctng-build
-cd ~/work/ctng-build
-ct-ng menuconfig
+./ct-ng menuconfig
 }}}
 http://wiki.starterkit-org.googlecode.com/git/images/ctng.png
 
