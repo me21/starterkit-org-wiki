@@ -1,4 +1,4 @@
-#summary Настройка host-системы
+#summary Настройка host-системы с Debian/Ubuntu
 
 == Введение ==
 
