@@ -33,3 +33,35 @@ make ARCH=arm oldconfig
 make ARCH=arm CROSS_COMPILE=arm-atmel-linux-gnueabi- uImage
 }}}
 CROSS_COMPILE - это префикс тулчейна, который получился после сборки [CrosstoolNg  кросскомпилятора]. В случае успешной сборки ядра, в каталоге arch/arm/boot будет лежать готовое ядро uImage, пригодное к загрузке как с SD-карты, так и из NAND на плате, с нижеописанными нюансами.
+
+= Настройка параметров загрузки ядра =
+
+При загрузке с разных носителей ядро должно использовать разные строки параметров.<br>
+Пример для NAND:
+{{{
+console=ttyS0,115200 ubi.mtd=1 root=ubi0:nandfs rw rootfstype=ubifs mem=64M
+}}}
+Пример для SD:
+{{{
+console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait mem=64M debug
+}}}
+Строку параметров можно задать как в ядре, в момент конфигурирования, так и в загрузчиках [Bootstrap bootstrap] и [UBoot u-boot]:
+{{{
+Boot options  --->
+  -*- Flattened Device Tree support
+  [*]   Support for the traditional ATAGS boot data passing
+  [ ]     Provide old way to pass kernel parameters
+  (0x0) Compressed ROM boot loader base address
+  (0x0) Compressed ROM boot loader BSS address
+  [ ] Use appended device tree blob to zImage (EXPERIMENTAL)
+  (console=ttyS0,115200 ubi.mtd=1 root=ubi0:nandfs rw rootfstype=ubifs) Default kernel command string
+        Kernel command line type (Use bootloader kernel arguments if available)  --->
+              (X) Use bootloader kernel arguments if available
+              ( ) Extend bootloader kernel arguments                  
+              ( ) Always use the default kernel command string
+  [ ] Kernel Execute-In-Place from ROM
+  [ ] Kexec system call (EXPERIMENTAL)
+  [ ] Build kdump crash kernel (EXPERIMENTAL)
+  [*] Auto calculation of the decompressed kernel image address
+}}}
+Выбор "Use bootloader kernel arguments if available", как раз, позволяет иметь одинаковое ядро, но при условии, что правильная строка передаётся из загрузчика. Если же хочется использовать строку "Default kernel command string", необходимо или выбрать "Always use the default kernel command string", или отключить передачу параметров загрузки из загрузчика.
