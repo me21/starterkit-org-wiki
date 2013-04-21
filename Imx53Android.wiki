@@ -39,7 +39,12 @@ dmesg
 ./flash_prebuilt_android.sh /dev/sdc
 }}}
 
-Для запуска Android нужно скорректировать переменные окружения установленного в nand платы u-boot для загрузки ядра с SD
+Для запуска Android нужно скорректировать переменные окружения u-boot установленного в nand платы для загрузки ядра с SD. Для этого остановите загрузку u-boot нажатием любой клавиши в терминале 
+{{{
+Hit any key to stop autoboot:  0 
+EVK U-Boot >
+}}}
+и введите в командной строке команды
 {{{
 setenv 'mmc_read' 'mmc rescan; mmc read 0x70800000 0x800 0x2000; mmc read 0x70D00000 0x3000 0x300' 
 setenv 'bootcmd' 'run mmc_read; bootm 0x70800000 0x70D00000'
