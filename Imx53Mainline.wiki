@@ -1,0 +1,9 @@
+#summary u-boot-2013.04, linux-3.9 для плат на i.mx53
+
+== Введение ==
+
+За основу взят BSP 
+http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads
+
+загрузчик из ветки imx  
+http://git.denx.de/u-boot-imx.git/?p=u-boot/u-boot-imx.git;a=summary
