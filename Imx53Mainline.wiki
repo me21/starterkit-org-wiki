@@ -2,8 +2,7 @@
 
 == Введение ==
 
-За основу взят BSP 
+Ядро взято из BSP tqma53
 http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads
-
-загрузчик из ветки imx  
+с патчами Pengutronix http://www.pengutronix.de/index_en.html, которые не входят (в настоящий момент) в ванильное ядро, загрузчик из ветки imx  
 http://git.denx.de/u-boot-imx.git/?p=u-boot/u-boot-imx.git;a=summary
