@@ -3,4 +3,18 @@
 == Введение ==
 
 Ядро взято из [http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads BSP tqma53] с патчами [http://www.pengutronix.de/index_en.html Pengutronix], которые не входят в настоящий момент в ванильное ядро (поддержка GPU, LDB, CSI), загрузчик [http://git.denx.de/u-boot-imx.git/?p=u-boot/u-boot-imx.git;a=summary u-boot] из ветки imx
-  
+
+== U-boot ==
+
+На данный момент u-boot из ветки imx (2013.04) намного мощней и гибче устаревшей версии 2009.08 которая поставляется с BSP Freescale, к тому же для полноценной работы для актуальных ядер с kernel.org требуется поддержка Device tree - унифицированный метод описания устройств и конфигурации аппаратных ресурсов.
+
+*Установка*
+
+{{{
+mkdir -p ~/work
+cd ~/work
+git clone git://git.denx.de/u-boot-imx.git
+wget http://starterkit-org.googlecode.com/files/u-boot-imx-sk.patch
+cd u-boot-imx
+patch -p1 < ../u-boot-imx-sk.patch
+}}}
