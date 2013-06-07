@@ -19,6 +19,7 @@ mkdir -p ~/work
 cd ~/work
 git clone git://git.pengutronix.de/git/tools/imx-usb-loader.git
 cd imx-usb-loader
+sudo apt-get install libusb-dev
 make
 }}}   
 
@@ -44,4 +45,21 @@ export CROSS_COMPILE=/home/sasa/imx/mainline/gcc-linaro-arm-linux-gnueabi-2012.0
 }}}
 {{{
 export ARCH=arm
+}}}
+
+Сборка образа для загрузки из NAND
+{{{
+make distclean
+make sk-imx53_config
+make
+}}}
+
+копируем его в корень tftp сервера чтобы была возможность обновить его по сети
+{{{
+cp u-boot-with-nand-spl.imx /tftpboot
+}}}
+
+Собираем образ u-boot для загрузки через USB-OTG порт
+{{{
+make u-boot.imx
 }}}
