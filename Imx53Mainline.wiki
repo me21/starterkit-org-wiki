@@ -31,3 +31,17 @@ wget http://starterkit-org.googlecode.com/files/u-boot-imx-sk.patch
 cd u-boot-imx
 patch -p1 < ../u-boot-imx-sk.patch
 }}}
+
+Настройка переменных окружения 
+{{{
+export CROSS_COMPILE=arm-none-linux-gnueabi-
+}}}
+
+Если путь к КК не прописан в переменной окружения PATH, укажите полный путь, например для КК [https://launchpad.net/linaro-toolchain-binaries/trunk/2012.04/+download/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux.tar.bz2 Linaro] который распакован у меня в директории /home/sasa/imx/mainlain
+
+{{{
+export CROSS_COMPILE=/home/sasa/imx/mainline/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux/bin/arm-linux-gnueabi-
+}}}
+{{{
+export ARCH=arm
+}}}
