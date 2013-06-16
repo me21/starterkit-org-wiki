@@ -2,7 +2,8 @@
 
 == Введение ==
 
-Ядро взято из [http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads BSP tqma53] с патчами [http://www.pengutronix.de/index_en.html Pengutronix], которые не входят в настоящий момент в ванильное ядро (поддержка GPU, LDB, CSI), загрузчик [http://git.denx.de/u-boot-imx.git/?p=u-boot/u-boot-imx.git;a=summary u-boot] из ветки imx
+Ядро взято из [http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads BSP tqma53] с патчами [http://www.pengutronix.de/index_en.html Pengutronix], которые не входят в настоящий момент в ванильное ядро (поддержка GPU, LDB, CSI), загрузчик [http://git.denx.de/u-boot-imx.git/?p=u-boot/u-boot-imx.git;a=summary u-boot] из ветки imx. 
+*Внимание* При замене u-boot и ядра на NAND будут утеряны все старые данные, потребуется заново создать ФС.
 
 == U-boot ==
 
@@ -65,3 +66,17 @@ cp u-boot-with-nand-spl.imx /tftpboot
 {{{
 make u-boot.imx
 }}}
+*прошивка u-boot*
+Это можно сделать двумя способами
+1 Используя Linux и набор утилит mtdutils. 
+Включить плату и залогиниться в терминале. Загрузить образ по tftp
+{{{
+tftp -g -r u-boot-with-nand-spl.imx 192.168.0.2
+}}}
+прошить образ
+{{{
+flash_erase /dev/mtd0 0 0
+nandwrite -p /dev/mtd0 u-boot-with-nand-spl.imx
+}}}
+2 Используя u-boot загруженный через USB-OTG. 
+Этот способ позволяет восстановить содержимое NAND "с нуля".
