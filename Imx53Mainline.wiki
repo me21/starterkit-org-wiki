@@ -12,14 +12,16 @@
 
 *imx-usb-loader*
 
-Чтобы избавиться от Windows и MFG-tools можно использовать утилиту [http://git.pengutronix.de/?p=tools/imx-usb-loader.git;a=summary imx-usb-loader] которая позволяет загружать код через USB-OTG работая в Linux. 
-
+Чтобы избавиться от Windows и MFG-tools можно использовать утилиту [http://git.pengutronix.de/?p=tools/imx-usb-loader.git;a=summary imx-usb-loader] которая позволяет загружать код через USB-OTG работая в Linux. Перед сборкой нужно установить пакет libusb с файлами для разработки, в случае Ubuntu 10.04
+{{{
+sudo apt-get install libusb-dev
+}}}
+для других дистрибутивах - уточните в соответствующих руководствах. Сборка
 {{{
 mkdir -p ~/work
 cd ~/work
 git clone git://git.pengutronix.de/git/tools/imx-usb-loader.git
 cd imx-usb-loader
-sudo apt-get install libusb-dev
 make
 }}}   
 
