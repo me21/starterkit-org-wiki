@@ -40,7 +40,7 @@ patch -p1 < ../u-boot-imx-sk.patch
 export CROSS_COMPILE=arm-none-linux-gnueabi-
 }}}
 
-Если путь к КК не прописан в переменной окружения PATH, укажите полный путь, например для КК [https://launchpad.net/linaro-toolchain-binaries/trunk/2012.04/+download/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux.tar.bz2 Linaro armel] который распакован у меня в директории /home/sasa/imx/mainlain
+Если путь к КК не прописан в переменной окружения PATH, укажите полный путь, например для КК [https://launchpad.net/linaro-toolchain-binaries/trunk/2012.04/+download/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux.tar.bz2 Linaro armel] который распакован у меня в директории /home/sasa/imx/mainline
 
 {{{
 export CROSS_COMPILE=/home/sasa/imx/mainline/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux/bin/arm-linux-gnueabi-
