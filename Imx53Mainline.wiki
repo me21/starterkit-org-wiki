@@ -68,6 +68,79 @@ cp u-boot-with-nand-spl.imx /tftpboot
 make u-boot.imx
 }}}
 
+*Примения*
+
+ Файлы cпецифичные для плат starterkit находятся в директории 
+{{{
+u-boot-imx/board/starterkit
+}}}
+Конфиг для платы SK-IMX53 
+{{{
+u-boot-imx/include/configs/sk-imx53.h
+}}}
+В конфиге прописаны переменные окружения, которые вы можете изменить под свои нужды. 
+{{{
+#define MTDPARTS_DEFAULT			\
+	"mtdparts=mxc-nand:"			\
+		"1m(bootloader),"		\
+		"512k(environment),"		\
+		"512k(redundant-environment),"	\
+		"4m(kernel),"			\
+		"128k(fdt),"			\
+		"8m(ramdisk),"			\
+		"-(filesystem)"
+}}}
+определяет границы разделов NAND для u-boot и читаемыые имена. Это удобно для написания загрузочных скриптов - не нужно помнить числа. Например скрипт обновления u-boot по tftp выглядит так
+{{{
+		"uboot_update=mtdparts default; tftp u-boot-with-nand-spl.imx; " \
+			"nand erase.part bootloader; nand write ${fileaddr} bootloader ${filesize}\0" \
+}}}
+здесь mtdparts default делает "видимыми" имена разделов прописанных по умолчанию для команд работающих с подсистемой MTD, после этого к разделам можно обращаться по именам, в частности nand erase.part bootloader очищает раздел содержащий загрузчик. Я не нашел - можно ли эту таблицу разделов автоматически передать ядру, поэтому аналогичная таблица прописана в device tree, исходники которого находятся в ядре linux-3.9/arch/arm/boot/dts/imx53-sk.dts
+{{{
+&nfc {
+	status = "okay";
+	nand-bus-width = <8>;
+	nand-ecc-mode = "hw";
+	#address-cells = <1>;
+	#size-cells = <1>;
+	
+	partition@0 {
+		label = "bootloader";
+		reg = <0x0000000 0x00100000>;
+	};
+
+	partition@100000 {
+		label = "environment";
+		reg = <0x00100000 0x00080000>;
+	};
+	
+	partition@180000 {
+		label = "redundant-environment";
+		reg = <0x00180000 0x00080000>;
+	};	
+
+	partition@200000 {
+		label = "kernel";
+		reg = <0x00200000 0x00400000>;
+	};
+	
+	partition@600000 {
+		label = "fdt";
+		reg = <0x00600000 0x00020000>;
+	};
+
+	partition@620000 {
+		label = "ramdisk";
+		reg = <0x00620000 0x00800000>;
+	};
+
+	partition@e20000 {
+		label = "filesystem";
+		reg = <0x00e20000 0x0f1e0000>;
+	};
+};
+}}}
+
 == Ядро Linux ==
 
 Скачиваем и распаковывем архив ванильного ядра с kernel.org
