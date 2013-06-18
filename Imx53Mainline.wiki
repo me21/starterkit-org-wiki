@@ -161,8 +161,8 @@ wget http://starterkit-org.googlecode.com/files/firmware.tar.bz2
 {{{
 tar xjvf firmware.tar.bz2 -C /rootfs_mnt_point/lib
 }}}
-где rootfs_mnt_point - директория к которой примонтирована корневая ФС
-Чтобы загрузить новое ядро старым загрузчиком, нужно подготовить специальный образ, необходимые опции включены в конфиге по умолчанию. После сборки ядра, выполните 
+где rootfs_mnt_point - директория к которой примонтирована корневая ФС.
+ *Чтобы загрузить новое ядро старым загрузчиком*, нужно подготовить специальный образ, необходимые опции включены в конфиге по умолчанию. После сборки ядра, выполните 
 {{{
 cat arch/arm/boot/zImage arch/arm/boot/dts/imx53-sk.dtb > zImage_dtb
 mkimage -A arm -O linux -C none -T kernel -a 0x70008000 -e 0x70008000 -n linux-2.6 -d zImage_dtb uImage
