@@ -183,7 +183,7 @@ cp arch/arm/boot/dts/imx53-sk.dtb /tftpboot
 
 *Примечания*
 
-Для SDMA и VPU потребуются прошивки, взять их можно тут
+Для SDMA и VPU потребуются прошивки, *прошивки из BSP Freeacale с новым ядром работать не будут*, взять их можно тут
 {{{
 wget http://starterkit-org.googlecode.com/files/firmware.tar.bz2
 }}}
