@@ -80,6 +80,13 @@ u-boot-imx/include/configs/sk-imx53.h
 }}}
 В конфиге прописаны переменные окружения, которые вы можете изменить под свои нужды. 
 {{{
+#define	CONFIG_EXTRA_ENV_SETTINGS					\
+		"ipaddr=192.168.0.136\0" \
+		"netmask=255.255.255.0\0" \
+.......
+}}}
+
+{{{
 #define MTDPARTS_DEFAULT			\
 	"mtdparts=mxc-nand:"			\
 		"1m(bootloader),"		\
