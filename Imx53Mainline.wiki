@@ -149,7 +149,7 @@ wget http://starterkit-org.googlecode.com/files/firmware.tar.bz2
 }}}
 Их нужно распаковать в директорию /lib корневой системы, например
 {{{
-tar xvf firmware.tar.bz2 -C /rootfs_mnt_point/lib
+tar xjvf firmware.tar.bz2 -C /rootfs_mnt_point/lib
 }}}
 где rootfs_mnt_point - директория к которой примонтирована корневая ФС
 
