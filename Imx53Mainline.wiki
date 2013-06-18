@@ -242,3 +242,5 @@ Filesystem images  --->
   (0x20000) UBI physical erase block size
   (512)   UBI sub-page size
 }}}
+
+Для теста можно воспользоваться [http://www.tq-group.com/uploads/tx_abdownloads/files/OSELAS.BSP-TQ-TQMA53.0105.images.tar.gz готовой корневой tqma53] Там есть собранный gstreamer-0.11 с патчами для работы с VPU, к сожалению мне не удалось вывести на экран видео [http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:how_to#use_the_vpu_of_imx53 как описано у них в wiki]
