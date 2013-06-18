@@ -78,6 +78,11 @@ u-boot-imx/board/starterkit
 {{{
 u-boot-imx/include/configs/sk-imx53.h
 }}}
+Частоту ядра можно изменить в конфиге, возможные значения 800, 1000 и 1200 МГц
+{{{
+/* cpu clock MHz: 800,1000,1200 */
+#define CONFIG_SK_IMX53_CPUCLK	1200 
+}}}
 В конфиге прописаны переменные окружения, которые вы можете изменить под свои нужды. 
 {{{
 #define	CONFIG_EXTRA_ENV_SETTINGS					\
