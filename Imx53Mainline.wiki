@@ -67,7 +67,41 @@ cp u-boot-with-nand-spl.imx /tftpboot
 {{{
 make u-boot.imx
 }}}
-*Прошивка u-boot*
+
+== Ядро Linux ==
+
+Скачиваем и распаковывем архив ванильного ядра с kernel.org
+{{{
+cd ~/work
+wget https://www.kernel.org/pub/linux/kernel/v3.x/linux-3.9.tar.xz
+tar xvf linux-3.9.tar.xz
+cd linux-3.9
+}}}
+Архив с патчами Pengutronix и поддержкой плат Starterkit
+{{{
+wget http://starterkit-org.googlecode.com/files/linux-3.9.tar.bz2
+tar xvf linux-3.9.tar.bz2
+}}}
+для простоты в архиве есть скрипт для наложения серии патчей, запускаем его
+{{{
+linux-3.9/patch.sh
+}}}
+Конфиг по умолчанию для платы SK-IMX53 (находится в arch/arm/configs/sk_imx53_defconfig)
+{{{
+make sk_imx53_defconfig
+}}}
+Сборка
+{{{
+make -j2
+}}}
+
+-j2 указывает сколько параллельных потоков при сборке проекта может использовать утилита make. После окончания сборки копируем сжатый образ ядра и блоб device tree с описанием и конфигурацией устройств платы в корень tftp-сервера
+{{{
+cp arch/arm/boot/zImage /tftpboot
+cp arch/arm/boot/dts/imx53-sk.dtb /tftpboot
+}}}
+
+== Прошивка u-boot ==
 Это можно сделать двумя способами
 
 1 Используя Linux и набор утилит mtdutils.
@@ -105,8 +139,5 @@ sudo ~/work/imx-usb-loader/imx-usb-loader ~/work/u-boot-imx/u-boot.imx
 {{{
 ==> run uboot_update
 }}}
-
-== Ядро Linux ==
-
 
  
