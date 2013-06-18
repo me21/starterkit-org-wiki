@@ -219,5 +219,5 @@ sudo ~/work/imx-usb-loader/imx-usb-loader ~/work/u-boot-imx/u-boot.imx
 {{{
 ==> run uboot_update
 }}}
-
+этой же командой можно обновить u-boot если в NAND уже прошита новая версия.
  
