@@ -5,6 +5,23 @@
 Описание для плат ревизии V3.B. Ядро взято из [http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads BSP tqma53] с патчами [http://www.pengutronix.de/index_en.html Pengutronix], которые не входят в настоящий момент в ванильное ядро (поддержка GPU, LDB, CSI), загрузчик [http://git.denx.de/u-boot-imx.git/?p=u-boot/u-boot-imx.git;a=summary u-boot] из ветки imx. 
 *Внимание* При замене u-boot и ядра на NAND будут утеряны все старые данные, потребуется заново создать ФС.
 
+== Настройка переменных окружения ==
+
+Для кросскомпиляции u-boot и ядра Linux требуется указать кросскомпилятор который будет использоваться и целевую архитектуру. Если вы будете делать в одном терминале - это достаточно сделать один раз. 
+
+{{{
+export CROSS_COMPILE=arm-none-linux-gnueabi-
+}}}
+
+Если путь к КК не прописан в переменной окружения PATH, укажите полный путь, например для КК [https://launchpad.net/linaro-toolchain-binaries/trunk/2012.04/+download/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux.tar.bz2 Linaro armel] который распакован у меня в директории /home/sasa/imx/mainline
+
+{{{
+export CROSS_COMPILE=/home/sasa/imx/mainline/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux/bin/arm-linux-gnueabi-
+}}}
+{{{
+export ARCH=arm
+}}}
+
 == U-boot ==
 
 На данный момент u-boot из ветки imx (2013.04) намного мощней и гибче устаревшей версии 2009.08 которая поставляется с BSP Freescale, к тому же для полноценной работы для актуальных ядер с kernel.org требуется поддержка Device tree - унифицированный метод описания устройств и конфигурации аппаратных ресурсов. 
@@ -34,20 +51,6 @@ git clone git://git.denx.de/u-boot-imx.git
 wget http://starterkit-org.googlecode.com/files/u-boot-imx-sk.patch
 cd u-boot-imx
 patch -p1 < ../u-boot-imx-sk.patch
-}}}
-
-Настройка переменных окружения 
-{{{
-export CROSS_COMPILE=arm-none-linux-gnueabi-
-}}}
-
-Если путь к КК не прописан в переменной окружения PATH, укажите полный путь, например для КК [https://launchpad.net/linaro-toolchain-binaries/trunk/2012.04/+download/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux.tar.bz2 Linaro armel] который распакован у меня в директории /home/sasa/imx/mainline
-
-{{{
-export CROSS_COMPILE=/home/sasa/imx/mainline/gcc-linaro-arm-linux-gnueabi-2012.04-20120426_linux/bin/arm-linux-gnueabi-
-}}}
-{{{
-export ARCH=arm
 }}}
 
 Сборка образа для загрузки из NAND
@@ -104,6 +107,8 @@ sudo ~/work/imx-usb-loader/imx-usb-loader ~/work/u-boot-imx/u-boot.imx
 {{{
 ==> run uboot_update
 }}}
+
+== Ядро Linux ==
 
 
  
