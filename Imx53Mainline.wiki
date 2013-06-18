@@ -103,68 +103,28 @@ u-boot-imx/include/configs/sk-imx53.h
 			"nand erase.part bootloader; nand write ${fileaddr} bootloader ${filesize}\0" \
 }}}
 здесь mtdparts default делает "видимыми" имена разделов прописанных по умолчанию для команд работающих с подсистемой MTD, после этого к разделам можно обращаться по именам, в частности nand erase.part bootloader очищает раздел содержащий загрузчик. Я не нашел - можно ли эту таблицу разделов автоматически передать ядру, поэтому аналогичная таблица прописана в device tree, исходники которого находятся в ядре linux-3.9/arch/arm/boot/dts/imx53-sk.dts
-{{{
-&nfc {
-	status = "okay";
-	nand-bus-width = <8>;
-	nand-ecc-mode = "hw";
-	#address-cells = <1>;
-	#size-cells = <1>;
-	
-	partition@0 {
-		label = "bootloader";
-		reg = <0x0000000 0x00100000>;
-	};
-
-	partition@100000 {
-		label = "environment";
-		reg = <0x00100000 0x00080000>;
-	};
-	
-	partition@180000 {
-		label = "redundant-environment";
-		reg = <0x00180000 0x00080000>;
-	};	
-
-	partition@200000 {
-		label = "kernel";
-		reg = <0x00200000 0x00400000>;
-	};
-	
-	partition@600000 {
-		label = "fdt";
-		reg = <0x00600000 0x00020000>;
-	};
-
-	partition@620000 {
-		label = "ramdisk";
-		reg = <0x00620000 0x00800000>;
-	};
-
-	partition@e20000 {
-		label = "filesystem";
-		reg = <0x00e20000 0x0f1e0000>;
-	};
-};
-}}}
 
 == Ядро Linux ==
 
-Скачиваем и распаковывем архив ванильного ядра с kernel.org
+Скачиваем и распаковывем архив ванильного ядра с kernel.org, предварительно установите архиватор LZMA, в случае Ubuntu 10.04
+{{{
+sudo apt-get install xz-utils
+}}}
+ 
 {{{
 cd ~/work
 wget https://www.kernel.org/pub/linux/kernel/v3.x/linux-3.9.tar.xz
-tar xvf linux-3.9.tar.xz
+tar xJvf linux-3.9.tar.xz
 cd linux-3.9
 }}}
 Архив с патчами Pengutronix и поддержкой плат Starterkit
 {{{
-wget http://starterkit-org.googlecode.com/files/linux-3.9.tar.bz2
-tar xvf linux-3.9.tar.bz2
+wget http://starterkit-org.googlecode.com/files/linux-3.9-patches.tar.bz2
+tar xjvf linux-3.9-patches.tar.bz2
 }}}
 для простоты в архиве есть скрипт для наложения серии патчей, запускаем его
 {{{
-linux-3.9/patch.sh
+./linux-3.9-patches/patch.sh
 }}}
 Конфиг по умолчанию для платы SK-IMX53 (находится в arch/arm/configs/sk_imx53_defconfig)
 {{{
