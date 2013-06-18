@@ -90,6 +90,10 @@ u-boot-imx/include/configs/sk-imx53.h
 		"netmask=255.255.255.0\0" \
 .......
 }}}
+По умолчанию параметры передаваемые ядру предполагают что корневая ФС находится в NAND
+{{{
+#define CONFIG_BOOTARGS		"noinitrd console=ttymxc0,115200 ubi.mtd=6 root=ubi0:rootfs rootfstype=ubifs rw"
+}}}
 
 {{{
 #define MTDPARTS_DEFAULT			\
@@ -197,3 +201,33 @@ sudo ~/work/imx-usb-loader/imx-usb-loader ~/work/u-boot-imx/u-boot.imx
 ==> run uboot_update
 }}}
 этой же командой можно обновить u-boot если в NAND уже прошита новая версия. 
+
+== Прошивка ядра ==
+
+Чтобы загрузить ядро по tftp и записать на NAND, выполните скрипт в u-boot
+{{{
+==> run kern_update  
+}}}
+
+== Прошивка корневой ФС ==
+
+Чтобы загрузить по tftp и записать имидж корневой ФС UBIFS, выполните скрипт в u-boot
+{{{
+run fs_update
+}}}
+предполагается что имидж имеет название rootfs.ubi. Чтобы получить его автоматически при сборке buildroot необходимо в конфигураторе buildroot укзать что нужно его создать
+{{{
+Filesystem images  --->
+  [*] ubifs root filesystem 
+}}}
+и указать параметры NAND
+{{{
+  (0x1f800) UBI logical erase block size
+  (0x800) UBI minimum I/O size
+  (1935) Maximum LEB count
+    ubifs runtime compression (lzo)  --->
+    Compression method (no compression)  --->
+  [*]   Embed into an UBI image
+  (0x20000) UBI physical erase block size
+  (512)   UBI sub-page size
+}}}
