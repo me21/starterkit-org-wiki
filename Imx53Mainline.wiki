@@ -152,6 +152,7 @@ cp arch/arm/boot/dts/imx53-sk.dtb /tftpboot
 
 *Примечания*
 
+По умолчанию в dts прописаны тайминги для 7" панели SK-ATM0700D4-Plug, графический вывод через LDB (lvds).
 Для SDMA и VPU потребуются прошивки, *прошивки из BSP Freeacale с новым ядром работать не будут*, взять их можно тут
 {{{
 wget http://starterkit-org.googlecode.com/files/firmware.tar.bz2
