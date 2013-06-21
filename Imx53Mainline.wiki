@@ -162,7 +162,22 @@ wget http://starterkit-org.googlecode.com/files/firmware.tar.bz2
 tar xjvf firmware.tar.bz2 -C /rootfs_mnt_point/lib
 }}}
 где rootfs_mnt_point - директория к которой примонтирована корневая ФС. Мне не удалось их подгрузить используя mdev или udev с корневой собранной в buildroot, при этом если использовать systemd в качестве системы инициализации - все работает.
- 
+Чтобы избавиться от systemd, можно собрать ядро с встроенными прошивками
+{{{
+cd ~/work/linux-3.9
+wget http://starterkit-org.googlecode.com/files/firmware.tar.bz2
+tar xjvf firmware.tar.bz2 
+make ARCH=arm menuconfig
+}}}  
+В опициях конфигуратора выберите такие пункты
+{{{
+Device Drivers  --->
+  Generic Driver Options  --->
+    [*]   Include in-kernel firmware blobs in kernel binary
+    (imx/sdma/sdma-imx53.bin v4l-coda7541-imx53.bin) External firmware blobs to build into the kernel
+    (firmware) Firmware blobs root directory
+}}}
+После этого пересобрать ядро.
 
 *Чтобы загрузить новое ядро старым загрузчиком* нужно подготовить специальный образ, необходимые опции включены в конфиге по умолчанию. После сборки ядра, выполните 
 {{{
