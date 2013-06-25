@@ -4,7 +4,7 @@
 
 Начальный загрузчик atmel bootstrap позволяет загружать ядро Linux напрямую (в последних версиях появилась поддержка Device tree), а также standalone код (включая u-boot) с различных внешних накопителей - SD, NAND (DataFlash на платах starterkit с процессором at91sam9g45 не используется).  
 
-= AT91Bootstrap v3.0 =
+== AT91Bootstrap v3.0 ==
 
 Последняя версия на момент описания 3.5.3, оригинал взят [http://repository.timesys.com/buildsources/a/at91bootstrap-3/at91bootstrap-3-3.5.3 тут] 
 
@@ -21,12 +21,17 @@ wget http://starterkit-org.googlecode.com/files/at91bootstrap-3-3.5.3-sk.patch
 cd at91bootstrap-3-3.5.3
 patch -p1 < ../at91bootstrap-3-3.5.3-sk.patch
 }}}
+На данный момент конфигурация SDR не добавлена.
 
-= Конфигурация =
+== Конфигурация ==
 
 В составе boostrap есть предопределенные конфиги, которые находятся в директории 
 {{{
 at91bootstrap-3-3.5.3/board/at91sam9m10g45ek
+}}}
+Перед конфигурацией и сборкой нужно указать КК через переменную окружения CROSS_COMPILE, например для [CrosstoolNg  кросскомпилятора] который вы собрали сами
+{{{
+CROSS_COMPILE=arm-atmel-linux-gnueabi-
 }}}
 
 
@@ -42,9 +47,3 @@ Linux Image Storage Setup  --->
   (mat91_sd.bin) Binary Name on SD Card
 }}}
 Заодно, можно сменить имя файла на SD на uImage, чтобы переименованием не заниматься после [KernelBuild сборки ядра]. С другой стороны, название ядра, соответствующее типу процессора, тоже может оказаться удобным.
-
-Сборка запускается командой
-{{{
-make CROSS_COMPILE=arm-atmel-linux-gnueabi-
-}}}
-CROSS_COMPILE - это префикс тулчейна, который получился после сборки [CrosstoolNg  кросскомпилятора]
