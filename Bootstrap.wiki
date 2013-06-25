@@ -87,3 +87,13 @@ sudo mount /dev/sdb1 /mnt
 sudo cp ~/work/at91bootstrap-3-3.5.3/binaries/at91sam9m10g45ek-sdcardboot-linux-3.5.3.bin /mnt/BOOT.BIN
 sudo umount /mnt
 }}}
+
+*NAND*
+
+Atmel SAM-BA In-system Programmer. Позволяет восстановить загрузчик "с нуля". На сайте atmel для скачивания требуется регистрация, без регистрации :) можно взять локальную копию
+{{{
+cd ~/work
+wget http://starterkit-org.googlecode.com/files/sam-ba_2.12.zip
+unzip sam-ba_2.12.zip
+cd sam-ba_cdc_cdc_linux
+}}}
