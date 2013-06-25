@@ -1,4 +1,4 @@
-#summary Сборка нескольких вариантов bootstrap (на примере SK-MAT91SAM9G45)
+#summary Сборка нескольких вариантов bootstrap
 
 = Введение =
 
@@ -9,6 +9,22 @@
 Процесс обновления тут, пока, не рассматривается, мне пересборка нужна была для изменения параметров загрузки ядра и включения [Watchdog watchdog], эти вопросы решаются в рамках версий, раздаваемых с ftp startekit.ru.
 
 = AT91Bootstrap v3.0 =
+
+Последняя версия на момент описания 3.5.3, оригинал взят [http://repository.timesys.com/buildsources/a/at91bootstrap-3/at91bootstrap-3-3.5.3 тут] 
+
+Скачиваем оригинал
+{{{
+mkdir -p ~/work
+cd ~/work
+wget http://starterkit-org.googlecode.com/files/at91bootstrap-3-3.5.3.tar.gz
+tar xzvf at91bootstrap-3-3.5.3.tar.gz
+}}}
+Добавляем starterkit-специфичный патч - исправляет геометрию внешней памяти DDR2 и сброс аудиокодека AC97
+{{{
+wget http://starterkit-org.googlecode.com/files/at91bootstrap-3-3.5.3-sk.patch
+cd at91bootstrap-3-3.5.3
+patch -p1 < ../at91bootstrap-3-3.5.3-sk.patch
+}}}
 
 Использованный компилятор: gcc version 4.6.4 20120402 (prerelease) (crosstool-NG 1.15.2) 
 
