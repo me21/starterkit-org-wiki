@@ -116,9 +116,16 @@ Bus 001 Device 006: ID 03eb:6124 Atmel Corp. at91sam SAMBA bootloader
  * Нажмите Connect
 http://wiki.starterkit-org.googlecode.com/git/images/samba1.png
  * Замкните перемычку NAND_CS
- * Перейдите на вкладку DDRAM и выполните инициализацию внешней памяти
+ * Перейдите на вкладку DDRAM и выполните инициализацию внешней памяти (
+{{{
+Scripts --> Enable DDRAM --> Execute
+}}}
 http://wiki.starterkit-org.googlecode.com/git/images/samba2.png
- * Перейдите на вкладку Nand и выполните инициализацию NAND
+ * Перейдите на вкладку NandFlash и выполните инициализацию NAND
+{{{
+Scripts --> Enable NAND --> Execute
+}}}
 http://wiki.starterkit-org.googlecode.com/git/images/samba3.png
  * Выберите бинарный файл загрузчика и нажмите Send File
 http://wiki.starterkit-org.googlecode.com/git/images/samba4.png
+ * Выйдите из программатора SAM-BA и отключите кабель USB 
