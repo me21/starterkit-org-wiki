@@ -25,7 +25,7 @@ patch -p1 < ../at91bootstrap-3-3.5.2-sk.patch
 
 В составе boostrap есть предопределенные конфиги, которые находятся в директории 
 {{{
-at91bootstrap-3-3.5.3/board/at91sam9m10g45ek
+at91bootstrap-3-3.5.2/board/at91sam9m10g45ek
 }}}
 Перед конфигурацией и сборкой нужно указать КК через переменную окружения CROSS_COMPILE, например для [CrosstoolNg  кросскомпилятора] который вы собрали сами
 {{{
@@ -75,7 +75,7 @@ U-Boot Image Storage Setup  --->
 {{{
 make
 }}}
-После сборки бинарниый файл загрузчика находится в директории at91bootstrap-3-3.5.3/binaries и имеет расширение .bin, например bootstrap для загрузки u-boot из NAND - at91sam9m10g45ek-nandflashboot-uboot-3.5.3.bin
+После сборки бинарниый файл загрузчика находится в директории at91bootstrap-3-3.5.2/binaries и имеет расширение .bin, например bootstrap для загрузки u-boot из NAND - at91sam9m10g45ek-nandflashboot-uboot-3.5.2.bin
 
 == Копирование на носитель ==
 
@@ -84,7 +84,7 @@ make
 Загрузчик должен находиться на первом разделе с файловой системой FAT и иметь название BOOT.BIN (обратите внимание - заглавные буквы). Например для SD, которая на хост-системе определилась как sdb
 {{{
 sudo mount /dev/sdb1 /mnt
-sudo cp ~/work/at91bootstrap-3-3.5.3/binaries/at91sam9m10g45ek-sdcardboot-linux-3.5.3.bin /mnt/BOOT.BIN
+sudo cp ~/work/at91bootstrap-3-3.5.2/binaries/at91sam9m10g45ek-sdcardboot-linux-3.5.2.bin /mnt/BOOT.BIN
 sudo umount /mnt
 }}}
 
