@@ -29,7 +29,7 @@ at91bootstrap-3-3.5.3/board/at91sam9m10g45ek
 }}}
 Перед конфигурацией и сборкой нужно указать КК через переменную окружения CROSS_COMPILE, например для [CrosstoolNg  кросскомпилятора] который вы собрали сами
 {{{
-CROSS_COMPILE=arm-atmel-linux-gnueabi-
+export CROSS_COMPILE=arm-atmel-linux-gnueabi-
 }}}
 Перед сборкой рекомендуется очистить дерево исходников от результатов предыдущей сборки
 {{{
