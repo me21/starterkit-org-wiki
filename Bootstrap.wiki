@@ -123,7 +123,7 @@ Scripts --> Enable DDRAM --> Execute
 http://wiki.starterkit-org.googlecode.com/git/images/samba2.png
  * Перейдите на вкладку NandFlash и выполните инициализацию NAND
 {{{
-Scripts --> Enable NAND --> Execute
+Scripts --> Enable NandFlash --> Execute
 }}}
 http://wiki.starterkit-org.googlecode.com/git/images/samba3.png
  * Выберите бинарный файл загрузчика и нажмите Send File
