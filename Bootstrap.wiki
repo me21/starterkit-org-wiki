@@ -1,4 +1,4 @@
-#summary Сборка нескольких вариантов bootstrap
+#summary Сборка bootstrap для плат на базе  at91sam9g45
 
 = Введение =
 
