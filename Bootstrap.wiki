@@ -51,11 +51,11 @@ Linux Image Storage Setup  --->
   (uImage) Binary Name on SD Card
 }}}
 
-*Для загрузки u-boot*
+*Для загрузки u-boot из NAND*
 {{{
 make at91sam9m10g45eknf_uboot_defconfig
 }}}
-Расклад NAND на платах starterkit незначительно отличается от оригинальной atmel, чтобы скорректировать адрес куда прописан u-boot
+Раскладка NAND на платах starterkit незначительно отличается от оригинальной atmel, нужно скорректировать адрес куда записан u-boot и размер раздела (имиджа)
 {{{
 make menuconfig
 }}}
