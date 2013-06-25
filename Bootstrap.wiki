@@ -6,9 +6,7 @@
 
 == AT91Bootstrap v3.0 ==
 
-Последняя версия на момент описания 3.5.3, оригинал взят [http://repository.timesys.com/buildsources/a/at91bootstrap-3/at91bootstrap-3-3.5.3 тут] 
-
-Скачиваем оригинал (продублирован на googlecode.com)
+Последняя версия на момент описания 3.5.3, [http://repository.timesys.com/buildsources/a/at91bootstrap-3/at91bootstrap-3-3.5.3 оригинал]. Скачиваем оригинал (продублирован на googlecode.com)
 {{{
 mkdir -p ~/work
 cd ~/work
