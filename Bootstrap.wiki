@@ -10,7 +10,7 @@
 {{{
 mkdir -p ~/work
 cd ~/work
-wget http://starterkit-org.googlecode.com/files/at91bootstrap-3-3.5.3.tar.gz
+wget http://starterkit-org.googlecode.com/files/at91bootstrap-3-3.5.2.tar.gz
 tar xzvf at91bootstrap-3-3.5.2.tar.gz
 }}}
 Добавляем starterkit-специфичный патч - исправляет геометрию внешней памяти DDR2 и сброс аудиокодека AC97
