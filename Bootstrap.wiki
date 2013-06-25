@@ -44,3 +44,9 @@ make at91sam9m10g45eksd_linux_defconfig
 {{{
 make menuconfig
 }}}
+Например изменить название имиджа ядра и параметры загрузки
+{{{
+Linux Image Storage Setup  --->
+  (mem=64M console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait) Linux kernel parameters
+  (uImage) Binary Name on SD Card
+}}}
