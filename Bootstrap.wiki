@@ -2,7 +2,7 @@
 
 = Введение =
 
-Начальный загрузчик atmel bootstrap позволяет загружать ядро Linux напрямую (в последних версиях появилась поддержка Device tree), а также standalone код (включая u-boot) с различных внешних накопителей - SD, NAND (DataFlash на платах starterkit с процессором at91sam9g45 не используется).    
+Начальный загрузчик atmel bootstrap позволяет загружать ядро Linux напрямую (в последних версиях появилась поддержка Device tree), а также standalone код (включая u-boot) с различных внешних накопителей - SD, NAND (DataFlash на платах starterkit с процессором at91sam9g45 не используется).  
 
 = AT91Bootstrap v3.0 =
 
@@ -22,7 +22,14 @@ cd at91bootstrap-3-3.5.3
 patch -p1 < ../at91bootstrap-3-3.5.3-sk.patch
 }}}
 
-Использованный компилятор: gcc version 4.6.4 20120402 (prerelease) (crosstool-NG 1.15.2) 
+= Конфигурация =
+
+В составе boostrap есть предопределенные конфиги, которые находятся в директории 
+{{{
+at91bootstrap-3-3.5.3/board/at91sam9m10g45ek
+}}}
+
+
 
 Конфигурацию можно менять посредством
 {{{
@@ -41,10 +48,3 @@ Linux Image Storage Setup  --->
 make CROSS_COMPILE=arm-atmel-linux-gnueabi-
 }}}
 CROSS_COMPILE - это префикс тулчейна, который получился после сборки [CrosstoolNg  кросскомпилятора]
-
-= sk_mat91sam9g45 =
-
-Использованный компилятор: Keil uVision 4.12 <br>
-Установка в Wine 1.4.0: "wine MDK412.exe"
-
-Фактически, необходимость пересборки была обусловлена только необходимостью включения [Watchdog watchdog] при загрузке с NAND, параметры ядра, в этом случае, задаются в [UBoot U-Boot].
