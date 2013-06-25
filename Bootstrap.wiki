@@ -97,3 +97,8 @@ wget http://starterkit-org.googlecode.com/files/sam-ba_2.12.zip
 unzip sam-ba_2.12.zip
 cd sam-ba_cdc_cdc_linux
 }}}
+
+Чтобы активировать встроенный загрузчик SAM-BA
+* Оключите БП  
+* Размкните перемычку NAND_CS
+* Извлеките SD из кардридера платы  
