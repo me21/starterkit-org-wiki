@@ -36,7 +36,7 @@ CROSS_COMPILE=arm-atmel-linux-gnueabi-
 make mrproper
 }}}
 
-*Для загрузки ядра Linux с SD*
+*Для загрузки ядра Linux с SD* напрямую (без u-boot)
 {{{
 make at91sam9m10g45eksd_linux_defconfig
 }}}
@@ -49,4 +49,18 @@ make menuconfig
 Linux Image Storage Setup  --->
   (mem=64M console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait) Linux kernel parameters
   (uImage) Binary Name on SD Card
+}}}
+
+*Для загрузки u-boot*
+{{{
+make at91sam9m10g45eknf_uboot_defconfig
+}}}
+Расклад NAND на платах starterkit незначительно отличается от оригинальной atmel, чтобы скорректировать адрес куда прописан u-boot
+{{{
+make menuconfig
+}}}
+{{{
+U-Boot Image Storage Setup  --->
+  (0x00020000) Flash Offset for U-Boot
+  (0x00040000) U-Boot Image Size
 }}}
