@@ -28,19 +28,6 @@ patch -p1 < ../at91bootstrap-3-3.5.3-sk.patch
 {{{
 make menuconfig
 }}}
-Bootstrap v3.0 собирается компилятором, обозначенным выше, при отключенной опции 
-{{{
-[ ] Build in thumb mode
-}}}
-В противном случае, сборка прекращается с ошибкой
-{{{
-driver/dma.o: In function `DMA_SetSourceBufferMode':
-driver/dma.c:264: undefined reference to `__gnu_thumb1_case_uqi'
-driver/dma.o: In function `DMA_SetDestBufferMode':
-driver/dma.c:316: undefined reference to `__gnu_thumb1_case_uqi'
-}}}
-[http://cgit.openembedded.org/openembedded/commit/?id=f9da3498f73a23dba0e874cad1e3232859371482 Существует патч], устраняющий проблему сборки, но в работе я его не проверял.
-
 Параметры загрузки ядра можно менять тут:
 {{{
 Linux Image Storage Setup  --->
