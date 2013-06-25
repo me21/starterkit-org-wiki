@@ -39,19 +39,10 @@ make mrproper
 }}}
 
 *Для загрузки ядра Linux с SD*
-
 {{{
 make at91sam9m10g45eksd_linux_defconfig
 }}}
-
-Конфигурацию можно менять посредством
+После дефолтного конфига конфигурацию можно скорректировать под свои нужды
 {{{
 make menuconfig
 }}}
-Параметры загрузки ядра можно менять тут:
-{{{
-Linux Image Storage Setup  --->
-  (mem=64M console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait debug) Linux kernel parameters
-  (mat91_sd.bin) Binary Name on SD Card
-}}}
-Заодно, можно сменить имя файла на SD на uImage, чтобы переименованием не заниматься после [KernelBuild сборки ядра]. С другой стороны, название ядра, соответствующее типу процессора, тоже может оказаться удобным.
