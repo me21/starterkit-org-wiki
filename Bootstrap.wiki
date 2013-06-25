@@ -12,7 +12,7 @@
 
 Последняя версия на момент описания 3.5.3, оригинал взят [http://repository.timesys.com/buildsources/a/at91bootstrap-3/at91bootstrap-3-3.5.3 тут] 
 
-Скачиваем оригинал
+Скачиваем оригинал (продублирован на googlecode.com)
 {{{
 mkdir -p ~/work
 cd ~/work
