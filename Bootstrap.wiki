@@ -64,3 +64,15 @@ U-Boot Image Storage Setup  --->
   (0x00020000) Flash Offset for U-Boot
   (0x00040000) U-Boot Image Size
 }}}
+По умолчанию сторожевой таймер отключен, чтобы включить
+{{{
+[ ] Disable Watchdog
+}}}
+
+== Сборка ==
+
+Непосредственно сборка выполняется командой make
+{{{
+make
+}}}
+После сборки бинарниый файл загрузчика находится в директории at91bootstrap-3-3.5.3/binaries и имеет расширение .bin, например bootstrap для загрузки u-boot из NAND - at91sam9m10g45ek-nandflashboot-uboot-3.5.3.bin
