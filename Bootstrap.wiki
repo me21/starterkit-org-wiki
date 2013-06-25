@@ -108,3 +108,7 @@ cd sam-ba_cdc_cdc_linux
 lsusb | grep Atmel
 Bus 001 Device 006: ID 03eb:6124 Atmel Corp. at91sam SAMBA bootloader
 }}}
+ * Запустите программатор SAM-BA
+{{{
+./sam-ba
+}}}
