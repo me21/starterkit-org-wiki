@@ -185,7 +185,10 @@ cat arch/arm/boot/zImage arch/arm/boot/dts/imx53-sk.dtb > zImage_dtb
 mkimage -A arm -O linux -C none -T kernel -a 0x70008000 -e 0x70008000 -n linux-2.6 -d zImage_dtb uImage
 cp uImage /tftpboot
 }}}
-Предполагается что утилита mkimage есть в путях переменной окружения PATH.
+Предполагается что утилита mkimage есть в путях переменной окружения PATH, например в ubuntu 10.04 можно установить командой
+{{{
+sudo apt-get install uboot-mkimage
+}}}
 
 
 == Прошивка u-boot ==
