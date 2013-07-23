@@ -61,9 +61,8 @@ sed -i 's/# CONFIG_PGREP is not set/CONFIG_PGREP=y/' package/busybox/busybox-1.1
 sed -i 's/# CONFIG_PKILL is not set/CONFIG_PKILL=y/' package/busybox/busybox-1.19.x.config
 }}}
 
-Если нужна поддержка сторожевого таймера, пропишите в загрузочные скрипты запуск демона
+Если нужна поддержка сторожевого таймера, пропишите в загрузочные скрипты запуск демона - создайте файл fs/skeleton/etc/init.d/S15watchdog с таким содержимым
 {{{
-cat << EOF > fs/skeleton/etc/init.d/S15watchdog
 #!/bin/sh
 
 case "$1" in
@@ -81,7 +80,6 @@ case "$1" in
 esac
 
 exit $?
-EOF
 }}}
 и установите права на исполнение для него
 {{{
