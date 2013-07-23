@@ -227,6 +227,14 @@ make linux-menuconfig
 Kernel Features ->
   Preemption Model (Fully Preemptible Kernel (RT))
 }}}
+включить поддержку сторожевого таймера
+{{{
+Device Drivers  --->
+  [*] Watchdog Timer Support  --->
+    [*]   WatchDog Timer Driver Core
+    [*]   Disable watchdog shutdown on close
+    <*>   AT91SAM9X / AT91CAP9 watchdog
+}}}
 пересобираем ядро (динамические модули автоматически добавятся в корневую ФС)
 {{{
 make
