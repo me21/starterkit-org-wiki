@@ -1,4 +1,4 @@
-#summary u-boot-2013.04, linux-3.9 для плат на i.mx53
+#summary u-boot-2013.07, linux-3.9 для плат на i.mx53
 
 == Введение ==
 
