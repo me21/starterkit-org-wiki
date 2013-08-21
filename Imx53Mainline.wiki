@@ -2,7 +2,7 @@
 
 == Введение ==
 
-Описание для плат ревизии V3.B. Ядро взято из [http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads BSP tqma53] с патчами [http://www.pengutronix.de/index_en.html Pengutronix], которые не входят в настоящий момент в ванильное ядро (поддержка GPU, LDB, CSI), загрузчик [http://git.denx.de/u-boot-imx.git/?p=u-boot/u-boot-imx.git;a=summary u-boot] из ветки imx. 
+Описание для плат ревизии V3.B. Ядро взято из [http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads BSP tqma53] с патчами [http://www.pengutronix.de/index_en.html Pengutronix], которые не входят в настоящий момент в ванильное ядро (поддержка GPU, LDB, CSI).
 *Внимание* При замене u-boot и ядра на NAND будут утеряны все старые данные, потребуется заново создать ФС.
 
 == Настройка переменных окружения ==
@@ -73,11 +73,11 @@ make u-boot.imx
 
  Файлы cпецифичные для плат starterkit находятся в директории 
 {{{
-u-boot-imx/board/starterkit
+u-boot-2013.07/board/starterkit
 }}}
 Конфиг для платы SK-IMX53 
 {{{
-u-boot-imx/include/configs/sk-imx53.h
+u-boot-2013.07/include/configs/sk-imx53.h
 }}}
 Частоту ядра можно изменить в конфиге, возможные значения 800, 1000 и 1200 МГц
 {{{
@@ -223,7 +223,7 @@ Bus 002 Device 008: ID 15a2:004e Freescale Semiconductor, Inc.
  * Замкните перемычку J7 (NAND CS)
  * Выполните команду на PC с Linux
 {{{
-sudo ~/work/imx-usb-loader/imx-usb-loader ~/work/u-boot-imx/u-boot.imx
+sudo ~/work/imx-usb-loader/imx-usb-loader ~/work/u-boot-2013.07/u-boot.imx
 }}}
  * в эмуляторе терминала должны появиться сообщения u-boot и 3 секундный отсчет перед загрузкой системы, нужно остановить загрузку нажатием любой клавиши
  * чтобы загрузить по tftp и прошить новый загрузчик в NAND, введите команду в консоли u-boot
