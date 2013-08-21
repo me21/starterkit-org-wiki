@@ -45,9 +45,10 @@ make
 
 {{{
 cd ~/work
-git clone git://git.denx.de/u-boot-imx.git
+wget ftp://ftp.denx.de/pub/u-boot/u-boot-2013.07.tar.bz2
 wget http://starterkit-org.googlecode.com/files/u-boot-imx-sk.patch
-cd u-boot-imx
+tar xjvf u-boot-2013.07.tar.bz2
+cd ./u-boot-2013.07
 patch -p1 < ../u-boot-imx-sk.patch
 }}}
 
@@ -68,7 +69,7 @@ cp u-boot-with-nand-spl.imx /tftpboot
 make u-boot.imx
 }}}
 
-*Примения*
+*Примечания*
 
  Файлы cпецифичные для плат starterkit находятся в директории 
 {{{
