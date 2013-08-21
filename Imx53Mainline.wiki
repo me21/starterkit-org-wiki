@@ -238,7 +238,11 @@ sudo ~/work/imx-usb-loader/imx-usb-loader ~/work/u-boot-2013.07/u-boot.imx
 {{{
 ==> run kern_update  
 }}}
-
+Для обновления бинарного файла device tree
+{{{
+==> run dtb_update
+}}}
+  
 == Прошивка корневой ФС ==
 
 Чтобы загрузить по tftp и записать имидж корневой ФС UBIFS, выполните скрипт в u-boot
