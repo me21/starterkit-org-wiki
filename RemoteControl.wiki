@@ -25,8 +25,21 @@
     Bluetooth device drivers  ---> 
       <*> HCI USB driver
 }}}
-Еще понадобятся утилиты работающие в пространстве пользователя - bluez-utils, их можно собрать в buildroot. Для упрощения настройки и сборки замените стандартные правила исправленным вариантом
+Еще понадобятся утилиты работающие в пространстве пользователя - bluez-utils, их можно собрать в buildroot. Для упрощения настройки и сборки замените стандартный пакет 
 {{{
 cd buildroot-2013.05
+wget http://starterkit-org.googlecode.com/files/bluez_utils.tar.gz -O - | tar zxf - -C ./package
 }}}
-
+buildroot-2013.05 написан для примера, подойдет любой.
+Включите в сборку bluez-utils
+{{{
+Package Selection for the target  --->
+  Networking applications  --->
+    [*] bluez-utils
+    [*]   USB support
+}}}
+Файлами устройств должен управлять udev
+{{{
+System configuration  --->
+  /dev management (Dynamic using udev)  --->
+}}}
