@@ -1,9 +1,27 @@
-#summary Дистанционное управление.
+#summary Дистанционное управление
 
 == Введение ==
 
-Рассматриваются различные варианты дистанционного управления с сипользованием ОС Linux.
+Рассматриваются различные варианты дистанционного управления с иcпользованием ОС Linux.
 
 == Bluetooth ==
 
-Дистанционное управление платой например с устройства на Android. Для связи подойдет любой usb bluetooth dongle, пример для платы imx53-sk c ядром 2.6.35. В первую очередь нужно включить поддержку bluetooth в ядре Linux.
+Дистанционное управление платой например с устройства на Android. Для связи подойдет любой usb bluetooth dongle, пример для платы imx53-sk c ядром 2.6.35. В первую очередь нужно включить поддержку bluetooth в ядре Linux, выбираем все протоколы
+{{{
+[*] Networking support  --->
+  <*>   Bluetooth subsystem support  --->
+    <*>   L2CAP protocol support
+    [*]     L2CAP Extended Features support (EXPERIMENTAL)
+    <*>   SCO links support
+    <*>   RFCOMM protocol support
+    [*]     RFCOMM TTY support
+    <*>   BNEP protocol support
+    [*]     Multicast filter support
+    [*]     Protocol filter support
+    <*>   HIDP protocol support
+}}}
+и поддержку HCI для USB (в том же подменю где протоколы) 
+{{{
+    Bluetooth device drivers  ---> 
+      <*> HCI USB driver
+}}}
