@@ -43,3 +43,8 @@ Package Selection for the target  --->
 System configuration  --->
   /dev management (Dynamic using udev)  --->
 }}}
+
+Android не имеет стандартных средств для эмуляции HID-совместимого устройства, для этого можно воспользоваться 
+[http://code.google.com/p/androhid AndroHid]
+для него потребуются права root, для этого можно использовать например
+[http://forum.xda-developers.com/showthread.php?t=2130276 Framaroot]
