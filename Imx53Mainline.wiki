@@ -1,8 +1,8 @@
-#summary u-boot-2013.07, linux-3.9 для плат на i.mx53
+#summary u-boot-2013.07, linux-3.9 для плат SK-iMX53
 
 == Введение ==
 
-Описание для плат ревизии V3.B. Ядро взято из [http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads BSP tqma53] с патчами [http://www.pengutronix.de/index_en.html Pengutronix], которые не входят в настоящий момент в ванильное ядро (поддержка GPU, LDB, CSI).
+Описание для плат SK-iMX53 ревизии V3.B. Ядро взято из [http://support.tq-group.com/doku.php?id=en:arm:tqma53:linux:downloads BSP tqma53] с патчами [http://www.pengutronix.de/index_en.html Pengutronix], которые не входят в настоящий момент в ванильное ядро (поддержка GPU, LDB, CSI).
 *Внимание* При замене u-boot и ядра на NAND будут утеряны все старые данные, потребуется заново создать ФС.
 
 == Настройка переменных окружения ==
